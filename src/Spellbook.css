@@ -1,3 +1,9 @@
 .SpellbookPanel {
     text-align: left;
 }
+
+.SpellList {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+}

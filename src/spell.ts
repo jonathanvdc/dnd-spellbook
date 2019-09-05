@@ -37,6 +37,15 @@ export type School = "abjuration" | "conjuration" | "divination" | "enchantment"
     | "evocation" | "illusion" | "necromancy" | "transmutation";
 
 /**
+ * Gets a URL to a particular spell's thumbnail.
+ * @param spell The spell to find a thumbnail for.
+ */
+export function getSpellThumbnailUrl(spell: Spell): string {
+    const imageUrlPrefix = "https://raw.githubusercontent.com/iconsheets/iconsheets.github.io/master/Images/";
+    return imageUrlPrefix + spell.name + ".png";
+}
+
+/**
  * A description of a spell.
  */
 export type Spell = {

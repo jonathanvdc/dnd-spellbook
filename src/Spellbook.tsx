@@ -1,9 +1,18 @@
 import React, { Component } from "react";
 import { Spell, SpellLevel } from "./spell";
-import { Link } from "react-router-dom";
 import "./Spellbook.css";
+import "./hr.css";
+import SpellLink from "./SpellLink";
 
 const sortedLevels: SpellLevel[] = ["cantrip", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+
+function sortBy<T>(list: T[], getKey: (val: T) => any): T[] {
+    return list.sort((a, b) => {
+        let x = getKey(a);
+        let y = getKey(b);
+        return +(x > y) - +(y > x);
+    });
+}
 
 /**
  * A component that displays a sequence of spells.
@@ -12,11 +21,9 @@ class Spellbook extends Component<{ spells: Spell[] }, any> {
     render() {
         let elems = [];
         for (let { level, spells } of this.spellsByLevel()) {
-            let levelName = level == "cantrip" ? "Cantrips" : `Level ${level} spells`;
+            let levelName = level === "cantrip" ? "Cantrips" : `Level ${level} spells`;
             elems.push(<div><hr/>{levelName}<hr/></div>);
-            for (let spell of spells) {
-                elems.push(<div><Link to={`/spell/${spell.name}`}>{spell.name}</Link></div>);
-            }
+            elems.push(<div className="SpellList">{sortBy(spells, s => s.name).map(spell => <SpellLink spell={spell}/>)}</div>);
         }
         return <div className="SpellbookPanel">{elems}</div>;
     }

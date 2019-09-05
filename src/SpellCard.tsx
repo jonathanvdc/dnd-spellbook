@@ -1,6 +1,7 @@
 import React, { Component } from "react";
-import { Spell } from "./spell";
+import { Spell, getSpellThumbnailUrl } from "./spell";
 import "./SpellCard.css";
+import "./hr.css";
 
 type Props = {
     spell: Spell;
@@ -76,11 +77,9 @@ class SpellCard extends Component<Props, {}> {
     }
 
     render() {
-        let imageUrlPrefix = "https://raw.githubusercontent.com/iconsheets/iconsheets.github.io/master/Images/";
-        let imageUrl = imageUrlPrefix + this.props.spell.name + ".png";
         return <div className="SpellCardPanel">
-            <img className="SpellThumbnail" src={imageUrl} alt={this.props.spell.name + " icon"} />
-            <div className="SpellType">{this.props.spell.type + (this.props.spell.ritual ? " (ritual)" : "")}</div>
+            <img className="SpellThumbnail" src={getSpellThumbnailUrl(this.props.spell)} alt={this.props.spell.name + " thumbnail"} />
+            <div className="SpellType">{this.props.spell.type}</div>
             <div className="SpellName">{this.props.spell.name}</div>
             <hr/>
             {this.createPropertiesGrid()}

@@ -1,0 +1,15 @@
+img {
+    width: 100px;
+    height: 100px;
+    border: 1px solid black;
+}
+
+.SpellLink {
+    color: #ccc;
+    font-family: Palatino,Palatino Linotype,Palatino LT STD,Book Antiqua,Georgia,serif;
+    text-decoration: none;
+    font-size: medium;
+    text-align: center;
+    display: inline-block;
+    width: 100px;
+}
