@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import './App.css';
 import { Spell } from './spell';
 import SpellCard from './SpellCard';
+import Spellbook from './Spellbook';
 
 let allSpells: Spell[] = [];
 
@@ -27,12 +28,18 @@ class App extends Component<{}, Spell[]> {
       <Router>
         <div className="App">
           <header className="App-header">
-            <Route exact={true} path="/" render={() => <div>Hi!</div>} />
+            <Route exact={true} path="/" component={MainScreenRouter} />
             <Route path="/spell/:spellName" component={SpellRoute} />
           </header>
         </div>
       </Router>
     );
+  }
+}
+
+class MainScreenRouter extends Component<{ match: any }, any> {
+  render() {
+    return <Spellbook spells={allSpells}/>;
   }
 }
 
