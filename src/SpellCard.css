@@ -1,0 +1,53 @@
+.SpellType {
+    text-align: center;
+    font-variant: small-caps;
+    font-size: small;
+}
+
+.SpellName {
+    font-variant: small-caps;
+    font-weight: normal;
+    font-style: normal;
+    font-size: x-large;
+    color: darkred;
+}
+
+.SpellCardPanel {
+    max-width: 20em;
+    text-align: center;
+    font-family: Palatino,Palatino Linotype,Palatino LT STD,Book Antiqua,Georgia,serif;
+    font-style: normal;
+    font-size: medium;
+    background: #f8f5eb;
+    color: black;
+    padding: 14px;
+}
+
+.SpellDescription {
+    text-align: justify;
+}
+
+.SpellPropertiesGrid {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-gap: 10px;
+    font-variant: small-caps;
+}
+
+.SpellPropertyItemName {
+    color: darkred;
+}
+
+.SpellThumbnail {
+    width: 40%;
+    border: 1px solid black ;
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
