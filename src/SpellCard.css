@@ -31,6 +31,7 @@
     display: grid;
     grid-template-columns: 50% 50%;
     grid-gap: 10px;
+    margin: 0px 10px;
     font-variant: small-caps;
 }
 
@@ -41,6 +42,13 @@
 .SpellThumbnail {
     width: 40%;
     border: 1px solid black ;
+}
+
+.SpellFootnote {
+    font-size: smaller;
+    text-align: justify;
+    margin-top: 1em;
+    /* color: rgb(54, 54, 54); */
 }
 
 hr {
