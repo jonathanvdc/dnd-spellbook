@@ -61,6 +61,20 @@ class SpellCard extends Component<Props, {}> {
         return elems;
     }
 
+    /**
+     * Creates a textual description of the spell.
+     */
+    createDescription(): JSX.Element {
+        let elems = [];
+        for (let elem of this.props.spell.description.split("\\n")) {
+            if (elems.length > 0) {
+                elems.push(<br/>);
+            }
+            elems.push(elem);
+        }
+        return <p className="SpellDescription">{elems}</p>;
+    }
+
     render() {
         let imageUrlPrefix = "https://raw.githubusercontent.com/iconsheets/iconsheets.github.io/master/Images/";
         let imageUrl = imageUrlPrefix + this.props.spell.name + ".png";
@@ -71,7 +85,7 @@ class SpellCard extends Component<Props, {}> {
             <hr/>
             {this.createPropertiesGrid()}
             <hr/>
-            <p className="SpellDescription">{this.props.spell.description}</p>
+            {this.createDescription()}
             <hr/>
             {this.createFootnotes()}
         </div>;
