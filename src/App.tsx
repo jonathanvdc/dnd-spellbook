@@ -4,37 +4,7 @@ import './App.css';
 import { Spell } from './spell';
 import SpellCard from './SpellCard';
 
-const placeholderSpell: Spell = {
-  "casting_time": "1 action",
-  "classes": [
-      "druid",
-      "ranger"
-  ],
-  "components": {
-      "material": true,
-      "materials_needed": [
-          "ashes from a burned leaf of mistletoe and a sprig of spruce"
-      ],
-      "raw": "V, S, M (ashes from a burned leaf of mistletoe and a sprig of spruce)",
-      "somatic": true,
-      "verbal": true
-  },
-  "description": "A veil of shadows and silence radiates from you, masking you and your companions from detection. For the duration, each creature you choose within 30 feet of you (including you) has a +10 bonus to Dexterity (Stealth) checks and can\u2019t be tracked except by magical means. A creature that receives this bonus leaves behind no tracks or other traces of its passage.",
-  "duration": "Concentration, up to 1 hour",
-  "level": "2",
-  "name": "Pass Without Trace",
-  "range": "Self",
-  "ritual": false,
-  "school": "abjuration",
-  "tags": [
-      "druid",
-      "ranger",
-      "level2"
-  ],
-  "type": "2nd-level abjuration"
-};
-
-let allSpells = [placeholderSpell];
+let allSpells: Spell[] = [];
 
 class App extends Component<{}, Spell[]> {
   constructor(props: {}) {
@@ -68,6 +38,9 @@ class App extends Component<{}, Spell[]> {
 
 class SpellRoute extends Component<{ match: any }, any> {
   render() {
+    if (allSpells.length === 0) {
+      return <div></div>;
+    }
     let spell = allSpells.find((val => val.name === this.props.match.params.spellName));
     if (spell) {
       return <SpellCard spell={spell} />;
