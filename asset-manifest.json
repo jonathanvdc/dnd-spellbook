@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/dnd-spellbook/static/css/main.ed8b8206.chunk.css",
-    "main.js": "/dnd-spellbook/static/js/main.98de225a.chunk.js",
-    "main.js.map": "/dnd-spellbook/static/js/main.98de225a.chunk.js.map",
+    "main.css": "/dnd-spellbook/static/css/main.26f92fb6.chunk.css",
+    "main.js": "/dnd-spellbook/static/js/main.79c68372.chunk.js",
+    "main.js.map": "/dnd-spellbook/static/js/main.79c68372.chunk.js.map",
     "runtime~main.js": "/dnd-spellbook/static/js/runtime~main.318ddfa0.js",
     "runtime~main.js.map": "/dnd-spellbook/static/js/runtime~main.318ddfa0.js.map",
-    "static/js/2.f94fe2df.chunk.js": "/dnd-spellbook/static/js/2.f94fe2df.chunk.js",
-    "static/js/2.f94fe2df.chunk.js.map": "/dnd-spellbook/static/js/2.f94fe2df.chunk.js.map",
+    "static/js/2.3ce00cf2.chunk.js": "/dnd-spellbook/static/js/2.3ce00cf2.chunk.js",
+    "static/js/2.3ce00cf2.chunk.js.map": "/dnd-spellbook/static/js/2.3ce00cf2.chunk.js.map",
     "index.html": "/dnd-spellbook/index.html",
-    "precache-manifest.34c1cf19eccc25963c9a45b0eb36de82.js": "/dnd-spellbook/precache-manifest.34c1cf19eccc25963c9a45b0eb36de82.js",
+    "precache-manifest.6d0f4e4323d45904408e1f253b69bab4.js": "/dnd-spellbook/precache-manifest.6d0f4e4323d45904408e1f253b69bab4.js",
     "service-worker.js": "/dnd-spellbook/service-worker.js",
-    "static/css/main.ed8b8206.chunk.css.map": "/dnd-spellbook/static/css/main.ed8b8206.chunk.css.map"
+    "static/css/main.26f92fb6.chunk.css.map": "/dnd-spellbook/static/css/main.26f92fb6.chunk.css.map"
   }
 }
