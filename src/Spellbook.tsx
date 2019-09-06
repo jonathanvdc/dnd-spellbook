@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Spell, SpellLevel, spellsByLevel, spellsBySchool } from "./spell";
+import { Spell, spellsByLevel, spellsBySchool } from "./spell";
 import "./Spellbook.css";
 import "./hr.css";
 import SpellLink from "./SpellLink";
