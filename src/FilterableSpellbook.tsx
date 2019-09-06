@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Spell, Class, allClasses } from "./spell";
 import Spellbook from "./Spellbook";
 import { ToggleButtonGroup, ToggleButton } from "react-bootstrap";
+import "./FilterableSpellbook.css";
 
 type Props = { spells: Spell[] };
 type State = {
@@ -42,9 +43,16 @@ class FilterableSpellbook extends Component<Props, State> {
             .filter(c => this.props.spells.some(s => s.classes.includes(c)));
         return <div>
             {usefulClasses.map(c =>
-                <ToggleButtonGroup type="checkbox" value={[this.state.classes.includes(c)]} onChange={(vals: any) => this.toggleClass(c, vals)}>
-                    <ToggleButton value={true}>{c}</ToggleButton>
-                </ToggleButtonGroup>)}
+                    <ToggleButtonGroup type="checkbox" value={[this.state.classes.includes(c)]} onChange={(vals: any) => this.toggleClass(c, vals)}>
+                        <ToggleButton className="ClassButton" value={true}>
+                            <div className="ClassButtonPanel">
+                                <div className="ClassImageBorder">
+                                    <img src={`https://www.dndbeyond.com/Content/1-0-547-0/Skins/Waterdeep/images/icons/classes/${c}.png`}/>
+                                </div>
+                                {c}
+                            </div>
+                        </ToggleButton>
+                    </ToggleButtonGroup>)}
             <Spellbook spells={this.getFilteredSpells()}/>
         </div>;
     }
