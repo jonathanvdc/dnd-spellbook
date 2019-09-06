@@ -18,8 +18,6 @@
     align-items: center;
     justify-content: center;
     border-radius: 50%;
-    width: 100px;
-    height: 100px;
     border-width: 4pt;
     border-style: solid;
     border-color: transparent;
@@ -36,8 +34,8 @@
 }
 
 .ClassButton img {
-    width: 80px;
-    height: 80px;
+    width: 70px;
+    height: 70px;
     border-radius: 50%;
     filter: brightness(60%);
     transition: filter 1s;

@@ -1,6 +1,6 @@
 img {
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
     border: 1px solid black;
 }
 
@@ -11,7 +11,7 @@ img {
     font-size: medium;
     text-align: center;
     display: inline-block;
-    width: 100px;
+    width: 80px;
 }
 
 .ExtraSpellLink, .ExtraSpellLink:hover {
