@@ -51,7 +51,7 @@ export function getSpellThumbnailUrl(spell: Spell): string {
     if (spell.thumbnail_url) {
         return spell.thumbnail_url;
     } else {
-        const imageUrlPrefix = "https://raw.githubusercontent.com/iconsheets/iconsheets.github.io/master/Images/";
+        const imageUrlPrefix = "https://iconsheets.github.io/Images/";
         return imageUrlPrefix + spell.name + ".png";
     }
 }
