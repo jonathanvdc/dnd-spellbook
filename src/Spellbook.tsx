@@ -23,7 +23,9 @@ class Spellbook extends Component<{ spells: Spell[] }, any> {
         for (let { level, spells } of this.spellsByLevel()) {
             let levelName = level === "cantrip" ? "Cantrips" : `Level ${level} spells`;
             elems.push(<div><hr/>{levelName}<hr/></div>);
-            elems.push(<div className="SpellList">{sortBy(spells, s => s.name).map(spell => <SpellLink spell={spell}/>)}</div>);
+            elems.push(<div className="SpellList">
+                    {sortBy(spells, s => s.name).map(spell => <div className="SpellListItem"><SpellLink spell={spell}/></div>)}
+                </div>);
         }
         return <div className="SpellbookPanel">{elems}</div>;
     }

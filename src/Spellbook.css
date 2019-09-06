@@ -7,3 +7,7 @@
     width: 100%;
     flex-wrap: wrap;
 }
+
+.SpellListItem {
+    margin: 4px;
+}
