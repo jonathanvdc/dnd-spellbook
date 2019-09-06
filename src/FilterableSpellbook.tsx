@@ -9,18 +9,29 @@ type State = {
     classes: Class[]
 };
 
+// TODO: avoid updating local storage here as it breaks composability.
+// Use callbacks instead.
+const localStorageKey = "spellbook-filter-state";
+
 class FilterableSpellbook extends Component<Props, State> {
     constructor(props: Props) {
         super(props);
-        this.state = {
-            classes: []
-        };
+        let savedState = localStorage.getItem(localStorageKey);
+        if (savedState) {
+            this.state = JSON.parse(savedState);
+        } else {
+            this.state = {
+                classes: []
+            };
+        }
     }
 
     updateClasses(values: Class[]) {
         this.setState({
             ...this.state,
             classes: values
+        }, () => {
+            localStorage.setItem("spellbook-filter-state", JSON.stringify(this.state));
         });
     }
 
