@@ -50,7 +50,7 @@ class SpellRoute extends Component<{ match: any }, any> {
     }
     let spell = allSpells.find((val => val.name === this.props.match.params.spellName));
     if (spell) {
-      return <SpellCard spell={spell} />;
+      return <div className="SpellCardBox"><SpellCard spell={spell} /></div>;
     } else {
       return <div><h1>Error 404</h1>Spell '{this.props.match.params.spellName}' not found.</div>;
     }

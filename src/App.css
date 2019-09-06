@@ -23,6 +23,11 @@
   color: #61dafb;
 }
 
+.SpellCardBox {
+  font-size: large;
+  max-width: 40em;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

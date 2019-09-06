@@ -13,7 +13,7 @@
 }
 
 .SpellCardPanel {
-    max-width: 20em;
+    /* max-width: 20em; */
     text-align: center;
     font-family: Palatino,Palatino Linotype,Palatino LT STD,Book Antiqua,Georgia,serif;
     font-style: normal;
@@ -29,7 +29,7 @@
 
 .SpellPropertiesGrid {
     display: grid;
-    grid-template-columns: 50% 50%;
+    grid-template-columns: repeat(auto-fit, minmax(9em, 1fr));
     grid-gap: 10px;
     margin: 0px 10px;
     font-variant: small-caps;
