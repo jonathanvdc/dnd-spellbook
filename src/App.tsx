@@ -3,7 +3,7 @@ import { Route, HashRouter } from 'react-router-dom';
 import './App.css';
 import { Spell } from './spell';
 import SpellCard from './SpellCard';
-import Spellbook from './Spellbook';
+import FilterableSpellbook from './FilterableSpellbook';
 
 let allSpells: Spell[] = [];
 
@@ -39,7 +39,10 @@ class App extends Component<{}, Spell[]> {
 
 class MainScreenRouter extends Component<{ match: any }, any> {
   render() {
-    return <Spellbook spells={allSpells}/>;
+    return <div>
+      <h1>Spellbook</h1>
+      <FilterableSpellbook spells={allSpells}/>
+    </div>;
   }
 }
 

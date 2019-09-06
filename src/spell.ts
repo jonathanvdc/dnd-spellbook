@@ -4,6 +4,13 @@ export type Class =
     | "paladin" | "ranger" | "rogue"
     | "warlock" | "sorcerer" | "wizard";
 
+export const allClasses: Class[] = [
+    "barbarian", "bard", "cleric",
+    "druid", "fighter", "monk",
+    "paladin", "ranger", "rogue",
+    "warlock", "sorcerer", "wizard"
+];
+
 /**
  * The components required to cast a spell.
  */

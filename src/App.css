@@ -26,6 +26,8 @@
 .SpellCardBox {
   font-size: large;
   max-width: 40em;
+  min-height: 100vh;
+  background: #f8f5eb;
 }
 
 @keyframes App-logo-spin {
