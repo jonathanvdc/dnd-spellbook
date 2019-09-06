@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Route, HashRouter } from 'react-router-dom';
 import './App.css';
-import { Spell } from './spell';
+import { Spell } from './model/spell';
 import SpellCard from './SpellCard';
 import FilterableSpellbook from './FilterableSpellbook';
 

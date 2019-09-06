@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Spell, getSpellThumbnailUrl } from "./spell";
+import { Spell, getSpellThumbnailUrl } from "./model/spell";
 import { Link } from "react-router-dom";
 import ReactHover from "react-hover";
 import './SpellLink.css';

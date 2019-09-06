@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Spell, Class, allClasses } from "./spell";
+import { Spell, Class, allClasses } from "./model/spell";
 import Spellbook from "./Spellbook";
 import { ToggleButtonGroup, ToggleButton } from "react-bootstrap";
 import "./FilterableSpellbook.css";

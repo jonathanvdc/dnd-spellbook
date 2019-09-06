@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Spell, getSpellThumbnailUrl } from "./spell";
+import { Spell, getSpellThumbnailUrl } from "./model/spell";
 import ReactMarkdown from "react-markdown";
 import "./SpellCard.css";
 import "./hr.css";
