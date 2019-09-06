@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { Route, HashRouter } from 'react-router-dom';
 import './App.css';
 import { Spell } from './spell';
 import SpellCard from './SpellCard';
@@ -25,14 +25,14 @@ class App extends Component<{}, Spell[]> {
 
   render() {
     return (
-      <Router>
+      <HashRouter>
         <div className="App">
           <header className="App-header">
             <Route exact={true} path="/" component={MainScreenRouter} />
             <Route path="/spell/:spellName" component={SpellRoute} />
           </header>
         </div>
-      </Router>
+      </HashRouter>
     );
   }
 }
