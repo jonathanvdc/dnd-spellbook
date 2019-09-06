@@ -51,8 +51,9 @@ export function getSpellThumbnailUrl(spell: Spell): string {
     if (spell.thumbnail_url) {
         return spell.thumbnail_url;
     } else {
-        const imageUrlPrefix = "https://iconsheets.github.io/Images/";
-        return imageUrlPrefix + spell.name + ".png";
+        // If we don't have a thumbnail for the spell, then we'll
+        // just create a URL that points to the school's thumbnail.
+        return `https://www.dndbeyond.com/Content/1-0-547-0/Skins/Waterdeep/images/spell-schools/35/${spell.school}.png`;
     }
 }
 
@@ -114,6 +115,21 @@ export function spellsBySchool(spells: Spell[]): { school: School, spells: Spell
     return groupBy(sortBy(spells, s => s.name), sortedSchools, s => s.school)
         .map(({ key, values }) => ({ school: key, spells: values }));
 }
+
+/**
+ * A description of a spell's source.
+ */
+export type SpellSource = {
+    /**
+     * The document in which the spell was originally described.
+     */
+    document: string;
+
+    /**
+     * The pages in the document that describe the spell.
+     */
+    pages?: string;
+};
 
 /**
  * A description of a spell.
@@ -188,4 +204,9 @@ export type Spell = {
      * An optional URL to the spell's thumbnail.
      */
     thumbnail_url?: string;
+
+    /**
+     * The document in which the spell was originally described.
+     */
+    source?: SpellSource;
 };
