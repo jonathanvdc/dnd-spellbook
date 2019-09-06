@@ -20,3 +20,12 @@
     margin: 4pt 0;
     padding: 2pt 10pt;
 }
+
+.SpellSchoolHeader {
+    writing-mode: sideways-lr;
+    text-align: right;
+    padding: 5pt 0;
+    font-family: Palatino,Palatino Linotype,Palatino LT STD,Book Antiqua,Georgia,serif;
+    font-variant: small-caps;
+    font-size: medium;
+}

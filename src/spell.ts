@@ -45,6 +45,65 @@ export function getSpellThumbnailUrl(spell: Spell): string {
     return imageUrlPrefix + spell.name + ".png";
 }
 
+const sortedLevels: SpellLevel[] = ["cantrip", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+const sortedSchools: School[] = [
+    "abjuration", "conjuration", "divination", "enchantment",
+    "evocation", "illusion", "necromancy", "transmutation"
+];
+
+function sortBy<T>(list: T[], getKey: (val: T) => any): T[] {
+    return list.sort((a, b) => {
+        let x = getKey(a);
+        let y = getKey(b);
+        return +(x > y) - +(y > x);
+    });
+}
+
+function groupBy<T, TKey>(
+    list: T[],
+    sortedGroups: TKey[],
+    getKey: (val: T) => TKey):
+    { key: TKey, values: T[] }[] {
+
+    let bins = new Map<TKey, T[]>();
+    for (let value of list) {
+        let key = getKey(value);
+        let bin = bins.get(key);
+        if (!bin) {
+            bin = [];
+            bins.set(key, bin);
+        }
+        bin.push(value);
+    }
+
+    let levelSpellPairs: { key: TKey, values: T[] }[] = [];
+    for (let key of sortedGroups) {
+        let values = bins.get(key);
+        if (values) {
+            levelSpellPairs.push({ key, values });
+        }
+    }
+    return levelSpellPairs;
+}
+
+/**
+ * Groups a list of spells by level.
+ * @param spells A list of spells to group.
+ */
+export function spellsByLevel(spells: Spell[]): { level: SpellLevel, spells: Spell[] }[] {
+    return groupBy(sortBy(spells, s => s.name), sortedLevels, s => s.level)
+        .map(({ key, values }) => ({ level: key, spells: values }));
+}
+
+/**
+ * Groups a list of spells by school.
+ * @param spells A list of spells to group.
+ */
+export function spellsBySchool(spells: Spell[]): { school: School, spells: Spell[] }[] {
+    return groupBy(sortBy(spells, s => s.name), sortedSchools, s => s.school)
+        .map(({ key, values }) => ({ school: key, spells: values }));
+}
+
 /**
  * A description of a spell.
  */
