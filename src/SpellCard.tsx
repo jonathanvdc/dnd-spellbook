@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Spell, getSpellThumbnailUrl } from "./spell";
+import ReactMarkdown from "react-markdown";
 import "./SpellCard.css";
 import "./hr.css";
 
@@ -66,14 +67,8 @@ class SpellCard extends Component<Props, {}> {
      * Creates a textual description of the spell.
      */
     createDescription(): JSX.Element {
-        let elems = [];
-        for (let elem of this.props.spell.description.split("\\n")) {
-            if (elems.length > 0) {
-                elems.push(<br/>);
-            }
-            elems.push(elem);
-        }
-        return <p className="SpellDescription">{elems}</p>;
+        let updatedDesc = this.props.spell.description.replace(/\\n/g, "\n");
+        return <ReactMarkdown className="SpellDescription" source={updatedDesc} />;
     }
 
     render() {
