@@ -63,12 +63,25 @@ class SpellCard extends Component<Props, {}> {
         return elems;
     }
 
+    private static formatDescription(description: string): JSX.Element {
+        let updatedDesc = description.replace(/\\n/g, "\n");
+        return <ReactMarkdown className="SpellDescription" source={updatedDesc} />;
+    }
+
     /**
      * Creates a textual description of the spell.
      */
     createDescription(): JSX.Element {
-        let updatedDesc = this.props.spell.description.replace(/\\n/g, "\n");
-        return <ReactMarkdown className="SpellDescription" source={updatedDesc} />;
+        let baseDesc = SpellCard.formatDescription(this.props.spell.description);
+        if (this.props.spell.higher_levels) {
+            return <div>
+                {baseDesc}
+                <hr/>
+                {SpellCard.formatDescription(this.props.spell.higher_levels)}
+            </div>;
+        } else {
+            return baseDesc;
+        }
     }
 
     render() {

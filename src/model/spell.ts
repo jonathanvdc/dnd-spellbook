@@ -48,8 +48,12 @@ export type School = "abjuration" | "conjuration" | "divination" | "enchantment"
  * @param spell The spell to find a thumbnail for.
  */
 export function getSpellThumbnailUrl(spell: Spell): string {
-    const imageUrlPrefix = "https://raw.githubusercontent.com/iconsheets/iconsheets.github.io/master/Images/";
-    return imageUrlPrefix + spell.name + ".png";
+    if (spell.thumbnail_url) {
+        return spell.thumbnail_url;
+    } else {
+        const imageUrlPrefix = "https://raw.githubusercontent.com/iconsheets/iconsheets.github.io/master/Images/";
+        return imageUrlPrefix + spell.name + ".png";
+    }
 }
 
 const sortedLevels: SpellLevel[] = ["cantrip", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
@@ -136,6 +140,11 @@ export type Spell = {
     description: string;
 
     /**
+     * An optional description of what the spell does at higher levels.
+     */
+    higher_levels?: string;
+
+    /**
      * A description of the spell's duration.
      */
     duration: string;
@@ -174,4 +183,9 @@ export type Spell = {
      * The spell's type.
      */
     type: string;
+
+    /**
+     * An optional URL to the spell's thumbnail.
+     */
+    thumbnail_url?: string;
 };

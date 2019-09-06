@@ -4,23 +4,14 @@ import './App.css';
 import { Spell } from './model/spell';
 import SpellCard from './SpellCard';
 import FilterableSpellbook from './FilterableSpellbook';
+import { predefinedSpells } from './model/spellDatabase';
 
-let allSpells: Spell[] = [];
+let allSpells: Spell[] = predefinedSpells;
 
 class App extends Component<{}, Spell[]> {
   constructor(props: {}) {
     super(props);
     this.state = allSpells;
-  }
-
-  componentDidMount() {
-    // Fetch spell database from third-party GitHub repository.
-    fetch("https://raw.githubusercontent.com/iconsheets/iconsheets.github.io/master/Database/SpellDatabase.json")
-    .then(response => response.json())
-    .then(json => {
-      allSpells = json;
-      this.setState(json);
-    });
   }
 
   render() {
