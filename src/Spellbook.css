@@ -12,6 +12,11 @@
     margin: 4px;
 }
 
+.FirstSpellListItem {
+    display: grid;
+    grid-template-columns: max-content max-content;
+}
+
 .LevelHeader {
     display: block;
     border: 0;

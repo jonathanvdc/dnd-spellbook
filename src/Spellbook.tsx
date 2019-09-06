@@ -16,8 +16,23 @@ class Spellbook extends Component<{ spells: Spell[] }, any> {
 
             let spellListItems: JSX.Element[] = [];
             for (let { school, spells } of spellsBySchool(levelSpells)) {
-                spellListItems.push(<div className="SpellSchoolHeader">{school}</div>);
-                spellListItems.push(...spells.map(spell => <div className="SpellListItem"><SpellLink spell={spell}/></div>));
+                let first = true;
+                for (let spell of spells) {
+                    let item = <div className="SpellListItem">
+                        <SpellLink spell={spell}/>
+                    </div>;
+                    if (first) {
+                        // Include header in a spell list item, so that the header
+                        // won't get placed alone at the end of a line.
+                        spellListItems.push(<div className="FirstSpellListItem">
+                            <div className="SpellSchoolHeader">{school}</div>
+                            {item}
+                        </div>);
+                        first = false;
+                    } else {
+                        spellListItems.push(item);
+                    }
+                }
             }
             elems.push(<div className="SpellList">{spellListItems}</div>);
         }
