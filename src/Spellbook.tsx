@@ -20,9 +20,9 @@ function sortBy<T>(list: T[], getKey: (val: T) => any): T[] {
 class Spellbook extends Component<{ spells: Spell[] }, any> {
     render() {
         let elems = [];
-        for (let { level, spells } of this.spellsByLevel()) {
+        for (let { level, spells } of Spellbook.spellsByLevel(this.props.spells)) {
             let levelName = level === "cantrip" ? "Cantrips" : `Level ${level} spells`;
-            elems.push(<div><hr/>{levelName}<hr/></div>);
+            elems.push(<div className="LevelHeader">{levelName}</div>);
             elems.push(<div className="SpellList">
                     {sortBy(spells, s => s.name).map(spell => <div className="SpellListItem"><SpellLink spell={spell}/></div>)}
                 </div>);
@@ -30,9 +30,9 @@ class Spellbook extends Component<{ spells: Spell[] }, any> {
         return <div className="SpellbookPanel">{elems}</div>;
     }
 
-    private spellsByLevel() {
+    private static spellsByLevel(spells: Spell[]) {
         let bins = new Map<string, Spell[]>();
-        for (let spell of this.props.spells) {
+        for (let spell of spells) {
             let bin = bins.get(spell.level);
             if (!bin) {
                 bin = [];
