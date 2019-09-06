@@ -23,6 +23,14 @@ class FilterableSpellbook extends Component<Props, State> {
         });
     }
 
+    toggleClass(key: Class, value: boolean[]) {
+        let newClasses = this.state.classes.filter(x => x !== key);
+        if (value.includes(true)) {
+            newClasses.push(key);
+        }
+        this.updateClasses(newClasses);
+    }
+
     getFilteredSpells(): Spell[] {
         return this.props.spells.filter(val =>
             this.state.classes.length === 0
@@ -30,12 +38,13 @@ class FilterableSpellbook extends Component<Props, State> {
     }
 
     render() {
+        let usefulClasses = allClasses
+            .filter(c => this.props.spells.some(s => s.classes.includes(c)));
         return <div>
-            <ToggleButtonGroup type="checkbox" value={this.state.classes} onChange={this.updateClasses.bind(this)}>
-                {allClasses
-                    .filter(c => this.props.spells.some(s => s.classes.includes(c)))
-                    .map(c => <ToggleButton value={c}>{c}</ToggleButton>)}
-            </ToggleButtonGroup>
+            {usefulClasses.map(c =>
+                <ToggleButtonGroup type="checkbox" value={[this.state.classes.includes(c)]} onChange={(vals: any) => this.toggleClass(c, vals)}>
+                    <ToggleButton value={true}>{c}</ToggleButton>
+                </ToggleButtonGroup>)}
             <Spellbook spells={this.getFilteredSpells()}/>
         </div>;
     }
