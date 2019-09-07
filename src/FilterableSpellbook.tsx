@@ -58,7 +58,7 @@ class FilterableSpellbook extends Component<Props, State> {
                         <ToggleButton className="ClassButton" value={true}>
                             <div className="ClassButtonPanel">
                                 <div className="ClassImageBorder">
-                                    <img src={`https://www.dndbeyond.com/Content/1-0-547-0/Skins/Waterdeep/images/icons/classes/${c}.png`} alt={c + " thumbnail"}/>
+                                    <img src={`images/${c}.svg`} alt={c + " thumbnail"}/>
                                 </div>
                                 {c}
                             </div>
