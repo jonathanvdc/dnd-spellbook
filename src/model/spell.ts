@@ -53,7 +53,7 @@ export function getSpellThumbnailUrl(spell: Spell): string {
     } else {
         // If we don't have a thumbnail for the spell, then we'll
         // just create a URL that points to the school's thumbnail.
-        return `images/${spell.school}.svg`;
+        return `images/schools/${spell.school}.svg`;
     }
 }
 
