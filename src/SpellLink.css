@@ -11,6 +11,7 @@ img {
     font-size: medium;
     text-align: center;
     display: inline-block;
+    word-wrap: break-word;
     width: 80px;
 }
 
