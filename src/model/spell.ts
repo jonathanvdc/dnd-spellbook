@@ -53,7 +53,7 @@ export function getSpellThumbnailUrl(spell: Spell): string {
     } else {
         // If we don't have a thumbnail for the spell, then we'll
         // just create a URL that points to the school's thumbnail.
-        return `https://www.dndbeyond.com/Content/1-0-547-0/Skins/Waterdeep/images/spell-schools/35/${spell.school}.png`;
+        return `images/${spell.school}.svg`;
     }
 }
 
