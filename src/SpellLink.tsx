@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { isMobile } from "react-device-detect";
 import ReactHover from "react-hover";
+import Tilt from "react-tilt";
 import { Spell, getSpellThumbnailUrl } from "./model/spell";
 import './SpellLink.css';
 import SpellCard from "./SpellCard";
@@ -22,7 +23,7 @@ class SpellLink extends Component<{spell: Spell}, {}> {
                 <div>{this.props.spell.name}</div>
             </Link>;
         if (isMobile) {
-            return linkImage;
+            return <Tilt>{linkImage}</Tilt>;
         } else {
             return <ReactHover options={hoverOptions}>
                     <ReactHover.Trigger type='trigger'>
