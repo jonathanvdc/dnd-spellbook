@@ -48,9 +48,9 @@ class SpellRoute extends Component<{ match: any }, any> {
     } else {
       let thumbStyle = {width: "30px", height: "30px"};
       return <div>
-        <img style={{...thumbStyle, transform: "scaleX(-1)"}} src="images/classes/wizard.svg" />
-        <img style={thumbStyle} src="images/classes/warlock.svg" />
-        <img style={thumbStyle} src="images/classes/wizard.svg" />
+        <img style={{...thumbStyle, transform: "scaleX(-1)"}} src="images/classes/wizard.svg" alt="" />
+        <img style={thumbStyle} src="images/classes/warlock.svg" alt="" />
+        <img style={thumbStyle} src="images/classes/wizard.svg" alt="" />
         <h1>Error 404</h1>
         Spell '{this.props.match.params.spellName}' not found.
       </div>;
