@@ -3,6 +3,7 @@ import { Spell, spellsByLevel, spellsBySchool } from "./model/spell";
 import "./Spellbook.css";
 import "./hr.css";
 import SpellLink from "./SpellLink";
+import LazyLoad from "react-lazyload";
 
 /**
  * A component that displays a sequence of spells.
@@ -34,7 +35,8 @@ class Spellbook extends Component<{ spells: Spell[] }, any> {
                     }
                 }
             }
-            elems.push(<div className="SpellList">{spellListItems}</div>);
+            // TODO: better estimate height?
+            elems.push(<LazyLoad height={400}><div className="SpellList">{spellListItems}</div></LazyLoad>);
         }
         return <div className="SpellbookPanel">{elems}</div>;
     }
