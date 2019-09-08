@@ -2,13 +2,13 @@ export type Class =
     "barbarian" | "bard" | "cleric"
     | "druid" | "fighter" | "monk"
     | "paladin" | "ranger" | "rogue"
-    | "warlock" | "sorcerer" | "wizard";
+    | "sorcerer" | "warlock" | "wizard";
 
 export const allClasses: Class[] = [
     "barbarian", "bard", "cleric",
     "druid", "fighter", "monk",
     "paladin", "ranger", "rogue",
-    "warlock", "sorcerer", "wizard"
+    "sorcerer", "warlock", "wizard"
 ];
 
 /**
