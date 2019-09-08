@@ -5,6 +5,10 @@
     font-variant: small-caps;
 }
 
+.ClassThumbnail {
+    border: 1px solid white;
+}
+
 .ClassButton, .ClassButton:active, .ClassButton:hover, .ClassButton:focus {
     background: transparent;
     box-shadow: none;

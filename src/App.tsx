@@ -31,7 +31,7 @@ class App extends Component<{}, Spell[]> {
 class MainScreenRouter extends Component<{ match: any }, any> {
   render() {
     return <div>
-      <h1>Spellbook</h1>
+      <h1 className="AppTitle">Spellbook</h1>
       <FilterableSpellbook spells={allSpells}/>
     </div>;
   }
@@ -46,7 +46,14 @@ class SpellRoute extends Component<{ match: any }, any> {
     if (spell) {
       return <div className="SpellCardBox"><SpellCard spell={spell} /></div>;
     } else {
-      return <div><h1>Error 404</h1>Spell '{this.props.match.params.spellName}' not found.</div>;
+      let thumbStyle = {width: "30px", height: "30px"};
+      return <div>
+        <img style={{...thumbStyle, transform: "scaleX(-1)"}} src="images/classes/wizard.svg" />
+        <img style={thumbStyle} src="images/classes/warlock.svg" />
+        <img style={thumbStyle} src="images/classes/wizard.svg" />
+        <h1>Error 404</h1>
+        Spell '{this.props.match.params.spellName}' not found.
+      </div>;
     }
   }
 }

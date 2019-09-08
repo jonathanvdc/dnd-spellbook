@@ -19,7 +19,7 @@ class SpellLink extends Component<{spell: Spell}, {}> {
         };
         let spellLink = `/spell/${this.props.spell.name}`;
         let linkImage = <Link className="SpellLink" to={spellLink}>
-                <img src={getSpellThumbnailUrl(this.props.spell)} alt={this.props.spell.name + " thumbnail"} />
+                <img className="SpellLinkThumbnail" src={getSpellThumbnailUrl(this.props.spell)} alt={this.props.spell.name + " thumbnail"} />
                 <div>{this.props.spell.name}</div>
             </Link>;
         if (isMobile) {
