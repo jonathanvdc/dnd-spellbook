@@ -28,7 +28,8 @@
 }
 
 .SpellSchoolHeader {
-    writing-mode: sideways-lr;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
     text-align: right;
     padding: 5pt 0;
     font-family: Palatino,Palatino Linotype,Palatino LT STD,Book Antiqua,Georgia,serif;
