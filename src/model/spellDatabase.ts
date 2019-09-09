@@ -1967,7 +1967,7 @@ export const predefinedSpells: Spell[] = [
         "source": {
             "document": "Players Handbook"
         },
-        "thumbnail_url": "https://iconsheets.github.io/Images/Produce Flame.png"
+        "thumbnail_url": "images/spells/produce-flame.svg"
     },
     {
         "casting_time": "1 action",
@@ -2004,7 +2004,7 @@ export const predefinedSpells: Spell[] = [
         "source": {
             "document": "Players Handbook"
         },
-        "thumbnail_url": "https://iconsheets.github.io/Images/Protection from Evil and Good.png"
+        "thumbnail_url": "images/spells/protection-from-evil-and-good.svg"
     },
     {
         "casting_time": "1 action",
@@ -2223,7 +2223,7 @@ export const predefinedSpells: Spell[] = [
         "source": {
             "document": "Players Handbook"
         },
-        "thumbnail_url": "https://iconsheets.github.io/Images/Sanctuary.png"
+        "thumbnail_url": "images/spells/sanctuary.svg"
     },
     {
         "casting_time": "1 bonus action",
