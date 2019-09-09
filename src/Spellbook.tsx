@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Spell, spellsByLevel, spellsBySchool } from "./model/spell";
+import { isFirefox } from "react-device-detect";
 import "./Spellbook.css";
 import "./hr.css";
 import SpellLink from "./SpellLink";
@@ -10,6 +11,7 @@ import LazyLoad from "react-lazyload";
  */
 class Spellbook extends Component<{ spells: Spell[] }, any> {
     render() {
+        let headerClass = "SpellSchoolHeader Sideways" + (isFirefox ? "Firefox" : "Other");
         let elems = [];
         for (let { level, spells: levelSpells } of spellsByLevel(this.props.spells)) {
             let levelName = level === "cantrip" ? "Cantrips" : `Level ${level} spells`;
@@ -26,7 +28,7 @@ class Spellbook extends Component<{ spells: Spell[] }, any> {
                         // Include header in a spell list item, so that the header
                         // won't get placed alone at the end of a line.
                         spellListItems.push(<div className="FirstSpellListItem">
-                            <div className="SpellSchoolHeader">{school}</div>
+                            <div className={headerClass}>{school}</div>
                             {item}
                         </div>);
                         first = false;

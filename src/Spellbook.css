@@ -28,11 +28,18 @@
 }
 
 .SpellSchoolHeader {
-    writing-mode: vertical-rl;
-    transform: rotate(180deg);
     text-align: right;
     padding: 5pt 0;
     font-family: Palatino,Palatino Linotype,Palatino LT STD,Book Antiqua,Georgia,serif;
     font-variant: small-caps;
     font-size: medium;
+}
+
+.SidewaysFirefox {
+    writing-mode: sideways-lr;
+}
+
+.SidewaysOther {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
 }
