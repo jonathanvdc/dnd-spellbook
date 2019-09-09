@@ -20,7 +20,7 @@ class Spellbook extends Component<{ spells: Spell[] }, any> {
                 let first = true;
                 for (let spell of spells) {
                     let item = <div className="SpellListItem">
-                        <SpellLink spell={spell}/>
+                        <LazyLoad height={80} once><SpellLink spell={spell}/></LazyLoad>
                     </div>;
                     if (first) {
                         // Include header in a spell list item, so that the header
@@ -35,8 +35,7 @@ class Spellbook extends Component<{ spells: Spell[] }, any> {
                     }
                 }
             }
-            // TODO: better estimate height?
-            elems.push(<LazyLoad height={400}><div className="SpellList">{spellListItems}</div></LazyLoad>);
+            elems.push(<div className="SpellList">{spellListItems}</div>);
         }
         return <div className="SpellbookPanel">{elems}</div>;
     }
