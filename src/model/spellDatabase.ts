@@ -645,7 +645,7 @@ export const predefinedSpells: Spell[] = [
         "source": {
             "document": "Players Handbook"
         },
-        "thumbnail_url": "https://iconsheets.github.io/Images/Detect Magic.png"
+        "thumbnail_url": "images/spells/detect-magic.svg"
     },
     {
         "casting_time": "1 action",
