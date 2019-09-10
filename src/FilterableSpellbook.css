@@ -25,7 +25,7 @@
     border-width: 4pt;
     border-style: solid;
     border-color: transparent;
-    transition: border-color 1s;
+    transition: border-color 0.3s;
 }
 
 .ClassButton.focus, .ClassButton:focus {
@@ -41,13 +41,13 @@
     width: 70px;
     height: 70px;
     border-radius: 50%;
-    filter: brightness(60%);
-    transition: filter 1s;
+    filter: brightness(50%);
+    transition: filter 0.2s;
 }
 
-.ClassButton:hover .ClassImageBorder {
-    border-color: #005cbf88;
-}
+/* .ClassButton:hover .ClassImageBorder {
+    border-color: #a8a8a833;
+} */
 
 .ClassButton:not(:disabled):not(.disabled).active .ClassImageBorder, .ClassButton:not(:disabled):not(.disabled):active .ClassImageBorder, .show > .ClassButton.dropdown-toggle .ClassImageBorder {
     border-color: #005cbf;
@@ -55,7 +55,7 @@
 }
 
 .ClassButton:hover img {
-    filter: brightness(80%);
+    filter: brightness(70%);
 }
 
 .ClassButton:not(:disabled):not(.disabled).active img, .ClassButton:not(:disabled):not(.disabled):active img, .show > .ClassButton.dropdown-toggle img {
