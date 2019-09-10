@@ -21,13 +21,13 @@ class Spellbook extends Component<{ spells: Spell[] }, any> {
             for (let { school, spells } of spellsBySchool(levelSpells)) {
                 let first = true;
                 for (let spell of spells) {
-                    let item = <div className="SpellListItem">
-                        <LazyLoad key={spell.name} height={80} once><SpellLink spell={spell}/></LazyLoad>
+                    let item = <div key={spell.name} className="SpellListItem">
+                        <LazyLoad height={80} once><SpellLink spell={spell}/></LazyLoad>
                     </div>;
                     if (first) {
                         // Include header in a spell list item, so that the header
                         // won't get placed alone at the end of a line.
-                        spellListItems.push(<div className="FirstSpellListItem">
+                        spellListItems.push(<div key={spell.name + '-first'} className="FirstSpellListItem">
                             <div className={headerClass}>{school}</div>
                             {item}
                         </div>);
