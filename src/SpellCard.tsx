@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { PureComponent } from "react";
 import { Spell, getSpellThumbnailUrl } from "./model/spell";
 import ReactMarkdown from "react-markdown";
 import { Link } from "react-router-dom";
@@ -13,7 +13,7 @@ type Props = {
 /**
  * A card that describes a spell.
  */
-class SpellCard extends Component<Props, {}> {
+class SpellCard extends PureComponent<Props> {
     /**
      * Create a "quick stats" grid to include in the card.
      */

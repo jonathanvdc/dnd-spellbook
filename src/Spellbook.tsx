@@ -1,15 +1,15 @@
-import React, { Component } from "react";
+import React, { PureComponent } from "react";
 import { Spell, spellsByLevel, spellsBySchool } from "./model/spell";
 import { isFirefox } from "react-device-detect";
 import "./Spellbook.css";
 import "./hr.css";
-import SpellLink from "./SpellLink";
+import SpellLink, { SpellLinkPlaceholder } from "./SpellLink";
 import LazyLoad from "react-lazyload";
 
 /**
  * A component that displays a sequence of spells.
  */
-class Spellbook extends Component<{ spells: Spell[] }, any> {
+class Spellbook extends PureComponent<{ spells: Spell[] }> {
     render() {
         let headerClass = "SpellSchoolHeader Sideways" + (isFirefox ? "Firefox" : "Other");
         let elems = [];
@@ -22,7 +22,7 @@ class Spellbook extends Component<{ spells: Spell[] }, any> {
                 let first = true;
                 for (let spell of spells) {
                     let item = <div key={spell.name} className="SpellListItem">
-                        <LazyLoad height={80} once><SpellLink spell={spell}/></LazyLoad>
+                        <LazyLoad once placeholder={<SpellLinkPlaceholder spell={spell}/>}><SpellLink spell={spell}/></LazyLoad>
                     </div>;
                     if (first) {
                         // Include header in a spell list item, so that the header

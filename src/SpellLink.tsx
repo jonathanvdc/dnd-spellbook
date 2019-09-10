@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { PureComponent } from "react";
 import { Link } from "react-router-dom";
 import { isMobile } from "react-device-detect";
 import ReactHover from "react-hover";
@@ -10,7 +10,7 @@ import SpellCard from "./SpellCard";
 /**
  * A reference to a spell, formatted as an image.
  */
-class SpellLink extends Component<{spell: Spell}, {}> {
+class SpellLink extends PureComponent<{spell: Spell}> {
     render() {
         const hoverOptions = {
             followCursor: false,
@@ -39,6 +39,17 @@ class SpellLink extends Component<{spell: Spell}, {}> {
                     </ReactHover.Hover>
                 </ReactHover>;
         }
+    }
+}
+
+export class SpellLinkPlaceholder extends PureComponent<{spell: Spell}> {
+    render() {
+        let spellLink = `/spell/${getSpellId(this.props.spell)}`;
+        let className = `SpellLinkThumbnail SpellLinkThumbnail-${this.props.spell.school}`;
+        return <Link className="SpellLink" to={spellLink}>
+                <div className={className} />
+                <div>{this.props.spell.name}</div>
+            </Link>;
     }
 }
 
