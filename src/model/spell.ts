@@ -215,3 +215,24 @@ export type Spell = {
      */
     source?: SpellSource;
 };
+
+/**
+ * Gets an identifier for a spell that is safe for use in a URL.
+ * @param spell The spell to get an identifier for.
+ */
+export function getSpellId(spell: Spell): string {
+    let name = spell.name;
+    const whitelist = /[0-9a-zA-Z]/;
+    let enc = '';
+    let dash = false;
+    for (let c of name.toLowerCase()) {
+        if (whitelist.test(c)) {
+            enc += c;
+            dash = false;
+        } else if (!dash) {
+            enc += '-';
+            dash = true;
+        }
+    }
+    return enc;
+}

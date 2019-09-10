@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { isMobile } from "react-device-detect";
 import ReactHover from "react-hover";
 import Tilt from "react-tilt";
-import { Spell, getSpellThumbnailUrl } from "./model/spell";
+import { Spell, getSpellThumbnailUrl, getSpellId } from "./model/spell";
 import './SpellLink.css';
 import SpellCard from "./SpellCard";
 
@@ -17,7 +17,7 @@ class SpellLink extends Component<{spell: Spell}, {}> {
             shiftX: 20,
             shiftY: 0
         };
-        let spellLink = `/spell/${this.props.spell.name}`;
+        let spellLink = `/spell/${getSpellId(this.props.spell)}`;
         let className = `SpellLinkThumbnail SpellLinkThumbnail-${this.props.spell.school}`;
         let linkImage = <Link className="SpellLink" to={spellLink}>
                 <img className={className} src={getSpellThumbnailUrl(this.props.spell)} alt={this.props.spell.name + " thumbnail"} />

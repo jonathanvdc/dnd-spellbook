@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Route, HashRouter } from 'react-router-dom';
 import './App.css';
-import { Spell } from './model/spell';
+import { Spell, getSpellId } from './model/spell';
 import SpellCard from './SpellCard';
 import FilterableSpellbook from './FilterableSpellbook';
 
@@ -29,7 +29,7 @@ class App extends Component<{}, Spell[]> {
         <div className="App">
           <header className="App-header">
             <Route exact={true} path="/" component={MainScreenRouter} />
-            <Route path="/spell/:spellName" component={SpellRoute} />
+            <Route path="/spell/:spellId" component={SpellRoute} />
           </header>
         </div>
       </HashRouter>
@@ -51,7 +51,7 @@ class SpellRoute extends Component<{ match: any }, any> {
     if (allSpells.length === 0) {
       return <div></div>;
     }
-    let spell = allSpells.find((val => val.name === this.props.match.params.spellName));
+    let spell = allSpells.find(val => getSpellId(val) === this.props.match.params.spellId);
     if (spell) {
       return <div className="SpellCardBox"><SpellCard spell={spell} /></div>;
     } else {
@@ -61,7 +61,7 @@ class SpellRoute extends Component<{ match: any }, any> {
         <img style={thumbStyle} src="images/classes/warlock.svg" alt="" />
         <img style={thumbStyle} src="images/classes/wizard.svg" alt="" />
         <h1>Error 404</h1>
-        Spell '{this.props.match.params.spellName}' not found.
+        Spell with ID '{this.props.match.params.spellId}' not found.
       </div>;
     }
   }
