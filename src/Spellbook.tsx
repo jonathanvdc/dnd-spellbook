@@ -22,7 +22,7 @@ class Spellbook extends Component<{ spells: Spell[] }, any> {
                 let first = true;
                 for (let spell of spells) {
                     let item = <div className="SpellListItem">
-                        <LazyLoad height={80} once><SpellLink spell={spell}/></LazyLoad>
+                        <LazyLoad key={spell.name} height={80} once><SpellLink spell={spell}/></LazyLoad>
                     </div>;
                     if (first) {
                         // Include header in a spell list item, so that the header

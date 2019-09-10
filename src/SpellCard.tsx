@@ -1,11 +1,13 @@
 import React, { Component } from "react";
 import { Spell, getSpellThumbnailUrl } from "./model/spell";
 import ReactMarkdown from "react-markdown";
+import { Link } from "react-router-dom";
 import "./SpellCard.css";
 import "./hr.css";
 
 type Props = {
     spell: Spell;
+    hide_links?: boolean;
 };
 
 /**
@@ -63,21 +65,32 @@ class SpellCard extends Component<Props, {}> {
         return elems;
     }
 
-    private static formatDescription(description: string): JSX.Element {
+    private renderLink(props: { href: string, title: string, children: any[] }) {
+        if (this.props.hide_links) {
+            return <span>{props.children}</span>;
+        } else {
+            return <Link to={props.href}>{props.children}</Link>;
+        }
+    }
+
+    private formatDescription(description: string): JSX.Element {
         let updatedDesc = description.replace(/\\n/g, "\n");
-        return <ReactMarkdown className="SpellDescription" source={updatedDesc} />;
+        let renderers = {
+            link: this.renderLink.bind(this)
+        };
+        return <ReactMarkdown className="SpellDescription" source={updatedDesc} renderers={renderers} />;
     }
 
     /**
      * Creates a textual description of the spell.
      */
     createDescription(): JSX.Element {
-        let baseDesc = SpellCard.formatDescription(this.props.spell.description);
+        let baseDesc = this.formatDescription(this.props.spell.description);
         if (this.props.spell.higher_levels) {
             return <div>
                 {baseDesc}
                 <hr/>
-                {SpellCard.formatDescription(this.props.spell.higher_levels)}
+                {this.formatDescription(this.props.spell.higher_levels)}
             </div>;
         } else {
             return baseDesc;
