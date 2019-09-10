@@ -4,14 +4,23 @@ import './App.css';
 import { Spell } from './model/spell';
 import SpellCard from './SpellCard';
 import FilterableSpellbook from './FilterableSpellbook';
-import { predefinedSpells } from './model/spellDatabase';
 
-let allSpells: Spell[] = predefinedSpells;
+let allSpells: Spell[] = [];
 
 class App extends Component<{}, Spell[]> {
   constructor(props: {}) {
     super(props);
     this.state = allSpells;
+  }
+
+  componentDidMount() {
+    // Fetch spell database.
+    fetch("data/spells.json")
+    .then(response => response.json())
+    .then(json => {
+      allSpells = json;
+      this.setState(json);
+    });
   }
 
   render() {

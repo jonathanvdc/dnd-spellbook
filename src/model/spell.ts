@@ -206,6 +206,11 @@ export type Spell = {
     thumbnail_url?: string;
 
     /**
+     * An optional accent color for the spell.
+     */
+    accent_color?: string;
+
+    /**
      * The document in which the spell was originally described.
      */
     source?: SpellSource;
