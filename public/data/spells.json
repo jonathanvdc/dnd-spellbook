@@ -14884,6 +14884,7 @@
             "somatic": false
         }, 
         "duration": "Instantaneous", 
+        "thumbnail_url": "images/spells/sword-burst.svg", 
         "type": "conjuration cantrip", 
         "name": "Sword Burst"
     }, 
