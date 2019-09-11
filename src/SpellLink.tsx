@@ -2,7 +2,7 @@ import React, { PureComponent } from "react";
 import { Link } from "react-router-dom";
 import { isMobile } from "react-device-detect";
 import ReactHover from "react-hover";
-import Tilt from "react-tilt";
+import Tilt from "./Tilt";
 import { Spell, getSpellThumbnailUrl, getSpellId } from "./model/spell";
 import './SpellLink.css';
 import SpellCard from "./SpellCard";
