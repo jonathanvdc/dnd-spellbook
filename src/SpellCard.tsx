@@ -10,6 +10,22 @@ type Props = {
     hide_links?: boolean;
 };
 
+const html_whitelist = [
+    'b', 'i', 'strong', 'br', 'p', 'span', 'div'
+];
+
+function is_in_html_whitelist(value: string): boolean {
+    value = value.trim();
+    if (value.startsWith('<')) {
+        for (let item of html_whitelist) {
+            if (value === `<${item}>` || value === `</${item}>` || value === `<${item}/>`) {
+                return true;
+            }
+        }
+    }
+    return false;
+}
+
 /**
  * A card that describes a spell.
  */
@@ -48,7 +64,7 @@ class SpellCard extends PureComponent<Props> {
         </div>;
     }
 
-    createFactFootnote(key: string, value: string) {
+    createFactFootnote(key: string, value: any) {
         return <div className="SpellFootnote"><span className="SpellPropertyItemName">{key}:</span> {value}</div>;
     }
 
@@ -58,8 +74,9 @@ class SpellCard extends PureComponent<Props> {
      */
     createFootnotes(): JSX.Element[] {
         let elems: JSX.Element[] = [];
-        if (this.props.spell.components.materials_needed) {
-            elems.push(this.createFactFootnote("Materials", this.props.spell.components.materials_needed.join("; ")));
+        let mats = this.props.spell.components.materials_needed;
+        if (mats && mats.length > 0) {
+            elems.push(this.createFactFootnote("Materials", mats.join("; ")));
         }
         elems.push(this.createFactFootnote("Classes", this.props.spell.classes.join(", ")));
         return elems;
@@ -73,12 +90,26 @@ class SpellCard extends PureComponent<Props> {
         }
     }
 
+    private allowNode(node: any): boolean {
+        if (node.type === "html") {
+            return is_in_html_whitelist(node.value);
+        } else {
+            return true;
+        }
+    }
+
     private formatDescription(description: string): JSX.Element {
         let updatedDesc = description.replace(/\\n/g, "\n");
         let renderers = {
             link: this.renderLink.bind(this)
         };
-        return <ReactMarkdown className="SpellDescription" source={updatedDesc} renderers={renderers} />;
+        return <ReactMarkdown
+            className="SpellDescription"
+            source={updatedDesc}
+            renderers={renderers}
+            allowNode={this.allowNode.bind(this)}
+            escapeHtml={false}
+            unwrapDisallowed={true} />;
     }
 
     /**
@@ -97,6 +128,21 @@ class SpellCard extends PureComponent<Props> {
         }
     }
 
+    createSourceCitation(): JSX.Element[] {
+        let src = this.props.spell.source;
+        if (src) {
+            let pageAttribution = src.pages
+                ? ", p. " + src.pages
+                : "";
+
+            return [
+                this.createFactFootnote("Source", <span><i>{src.document}</i>{pageAttribution}.</span>)
+            ];
+        } else {
+            return [];
+        }
+    }
+
     render() {
         let thumbnailUrl = getSpellThumbnailUrl(this.props.spell);
         return <div className="SpellCardPanel">
@@ -109,6 +155,7 @@ class SpellCard extends PureComponent<Props> {
             {this.createDescription()}
             <hr/>
             {this.createFootnotes()}
+            {this.createSourceCitation()}
         </div>;
     }
 }
