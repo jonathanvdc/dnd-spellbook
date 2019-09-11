@@ -1,5 +1,59 @@
 [
     {
+        "school": "evocation", 
+        "description": "A flurry of magic snowballs erupts from a point you choose within range. Each creature in a 5-foot-radius sphere centered on that point must make a Dexterity saving throw. A creature takes 3d6 cold damage on a failed save, or half as much damage on a successful one.\n\nAt Higher Levels. When you cast this spell using a spell slot of 3rd level or higher, the damage increases by 1d6 for each slot level above 2nd.", 
+        "level": "2", 
+        "ritual": false, 
+        "casting_time": "1 action", 
+        "source": {
+            "document": "Elemental Evil Player's Companion", 
+            "pages": "22"
+        }, 
+        "range": "90 feet", 
+        "classes": [
+            "sorcerer", 
+            "wizard"
+        ], 
+        "components": {
+            "raw": "V, S, M (a piece of ice or a small white rock chip)", 
+            "materials_needed": [
+                "a piece of ice or a small white rock chip"
+            ], 
+            "material": true, 
+            "verbal": true, 
+            "somatic": true
+        }, 
+        "duration": "Instantaneous", 
+        "type": "2nd-level evocation", 
+        "name": "Snilloc's Snowball Swarm"
+    }, 
+    {
+        "school": "evocation", 
+        "description": "You hurl an undulating, warbling mass of chaotic energy at one creature in range. Make a ranged spell attack against the target. On a hit, the target takes 2d8 + 1d6 damage. Choose one of the d8s. The number rolled on that die determines the attacks damage type, as shown below.\n\n|d8|Damage Type|\n|---|---|\n| 1 | Acid |\n| 2 | Cold |\n| 3 | Fire |\n| 4 | Force |\n| 5 | Lightning |\n| 6 | Poison |\n| 7 | Psychic |\n| 8 | Thunder |\n\nIf you roll the same number on both d8s, the chaotic energy leaps from the target to a different creature of your choice within 30 feet of it. Make a new attack roll against the new target, and make a new damage roll, which could cause the chaotic energy to leap again. A creature can be targeted only once by each casting of this spell.", 
+        "level": "1", 
+        "type": "1st-level evocation", 
+        "ritual": false, 
+        "casting_time": "1 action", 
+        "source": {
+            "document": "Xanathar's Guide To Everything", 
+            "pages": "151"
+        }, 
+        "range": "120 feet", 
+        "classes": [
+            "sorcerer"
+        ], 
+        "components": {
+            "raw": "V, S", 
+            "materials_needed": [], 
+            "material": false, 
+            "verbal": true, 
+            "somatic": true
+        }, 
+        "duration": "Instantaneous", 
+        "higher_levels": "When you cast this spell using a spell slot of 2nd level or higher, each target takes 1d6 extra damage of the type rolled for each slot level above 1st.", 
+        "name": "Chaos Bolt"
+    }, 
+    {
         "school": "conjuration", 
         "description": "You hurl a bubble of acid. Choose one creature within range, or choose two creatures within range that are within 5 feet of each other. A target must succeed on a Dexterity saving throw or take 1d6 acid damage.\\n\\nThis spell's damage increases by 1d6 when you reach 5th level (2d6), 11th level (3d6), and 17th level (4d6).", 
         "level": "cantrip", 
@@ -679,6 +733,10 @@
         "level": "1", 
         "ritual": true, 
         "casting_time": "1 action", 
+        "source": {
+            "document": "Player's Handbook", 
+            "pages": "231"
+        }, 
         "range": "Self", 
         "classes": [
             "cleric", 
@@ -704,7 +762,7 @@
             "ranger", 
             "level1"
         ], 
-        "name": "Detect Poison or Disease"
+        "name": "Detect Poison and Disease"
     }, 
     {
         "school": "illusion", 
@@ -3462,6 +3520,8 @@
             "somatic": false
         }, 
         "duration": "Concentration, up to 1 minute", 
+        "accent_color": "#b5ffa5", 
+        "thumbnail_url": "images/spells/aura-of-vitality.svg", 
         "type": "3rd-level evocation", 
         "tags": [
             "paladin", 
@@ -5356,6 +5416,8 @@
             "somatic": true
         }, 
         "duration": "8 hours", 
+        "accent_color": "#cfdf9d", 
+        "thumbnail_url": "images/spells/cordon-of-arrows.svg", 
         "higher_levels": "When you cast this spell using a spell slot of 3rd level or higher, the amount of ammunition that can be affected increases by two for each slot level above 2nd.", 
         "tags": [
             "ranger", 
@@ -13209,32 +13271,6 @@
         "name": "Ceremony"
     }, 
     {
-        "school": "evocation", 
-        "description": "You hurl an undulating, warbling mass of chaotic energy at one creature in range. Make a ranged spell attack against the target. On a hit, the target takes 2d8 + 1d6 damage. Choose one of the d8s. The number rolled on that die determines the attacks damage type, as shown below.\n\nd8 / Damage Type\n\n1 / Acid\n\n2 / Cold\n\n3 / Fire\n\n4 / Force\n\n5 / Lightning\n\n6 / Poison\n\n7 / Psychic\n\n8 / Thunder\n\nIf you roll the same number on both d8s, the chaotic energy leaps from the target to a different creature of your choice within 30 feet of it. Make a new attack roll against the new target, and make a new damage roll, which could cause the chaotic energy to leap again. A creature can be targeted only once by each casting of this spell.", 
-        "level": "1", 
-        "higher_levels": "When you cast this spell using a spell slot of 2nd level or higher, each target takes 1d6 extra damage of the type rolled for each slot level above 1st.", 
-        "ritual": false, 
-        "casting_time": "1 action", 
-        "source": {
-            "document": "Xanathar's Guide To Everything", 
-            "pages": "151"
-        }, 
-        "range": "120 feet", 
-        "classes": [
-            "sorcerer"
-        ], 
-        "components": {
-            "raw": "V, S", 
-            "materials_needed": [], 
-            "material": false, 
-            "verbal": true, 
-            "somatic": true
-        }, 
-        "duration": "Instantaneous", 
-        "type": "1st-level evocation", 
-        "name": "Chaos Bolt"
-    }, 
-    {
         "school": "enchantment", 
         "description": "You attempt to charm a creature you can see within range. It must make a Wisdom saving throw, and it does so with advantage if you or your companions are fighting it. If it fails the saving throw, it is charmed by you until the spell ends or until you or your companions do anything harmful to it. The charmed creature is friendly to you. When the spell ends, the creature knows it was charmed by you.", 
         "level": "4", 
@@ -13373,36 +13409,6 @@
         "duration": "Concentration, up to 1 minute", 
         "type": "5th-level evocation", 
         "name": "Dawn"
-    }, 
-    {
-        "school": "divination", 
-        "description": "For the duration, you can sense the presence and location of poisons, poisonous creatures, and diseases within 30 feet of you. You also identify the kind of poison, poisonous creature, or disease in each case. \n\n\n\nThe spell can penetrate most barriers, but is blocked by 1 foot of stone, 1 inch of common metal, a thin sheet of lead, or 3 feet of wood or dirt.", 
-        "level": "1", 
-        "ritual": false, 
-        "casting_time": "1 action", 
-        "source": {
-            "document": "Player's Handbook", 
-            "pages": "231"
-        }, 
-        "range": "Self", 
-        "classes": [
-            "cleric", 
-            "druid", 
-            "paladin", 
-            "ranger"
-        ], 
-        "components": {
-            "raw": "V, S, M (a yew leaf)", 
-            "materials_needed": [
-                "a yew leaf"
-            ], 
-            "material": true, 
-            "verbal": true, 
-            "somatic": true
-        }, 
-        "duration": "Concentration, up to 10 minutes", 
-        "type": "1st-level divination", 
-        "name": "Detect Poison and Disease"
     }, 
     {
         "school": "transmutation", 
@@ -13976,6 +13982,7 @@
             "somatic": false
         }, 
         "duration": "Instantaneous", 
+        "thumbnail_url": "images/spells/lightning-lure.svg", 
         "type": "evocation cantrip", 
         "name": "Lightning Lure"
     }, 
@@ -14720,32 +14727,6 @@
         "name": "Snare"
     }, 
     {
-        "school": "evocation", 
-        "description": "(a piece of ice or a small white rock chip)\n\nA flurry of magic snowballs erupts from a point you choose within range. Each creature in a 5-foot-radius sphere centered on that point must make a Dexterity saving throw. A creature takes 3d6 cold damage on a failed save, or half as much damage on a successful one.\n\nAt Higher Levels. When you cast this spell using a spell slot of 3rd level or higher, the damage increases by 1d6 for each slot level above 2nd.", 
-        "level": "2", 
-        "ritual": false, 
-        "casting_time": "1 action", 
-        "source": {
-            "document": "Elemental Evil Player's Companion", 
-            "pages": "22"
-        }, 
-        "range": "90 feet", 
-        "classes": [
-            "sorcerer", 
-            "wizard"
-        ], 
-        "components": {
-            "raw": "V, S, M", 
-            "materials_needed": [], 
-            "material": true, 
-            "verbal": true, 
-            "somatic": true
-        }, 
-        "duration": "Instantaneous", 
-        "type": "2nd-level evocation", 
-        "name": "Snilloc's Snowball Swarm"
-    }, 
-    {
         "school": "necromancy", 
         "description": "1 reaction, which you take when a humanoid you can see within 60 feet of you dies\n\n\n\nThis spell snatches the soul of a humanoid as it dies and traps it inside the tiny cage you use for the material component. A stolen soul remains inside the cage until the spell ends or until you destroy the cage, which ends the spell. While you have a soul inside the cage, you can exploit it in any of the ways described below. You can use a trapped soul up to six times. Once you exploit a soul for the sixth time, it is released, and the spell ends. While a soul is trapped, the dead humanoid it came from can't be revived.\n\nSteal Life. You can use a bonus action to drain vigor from the soul and regain 2d8 hit points.\n\nQuery Soul. You ask the soul a question (no action required) and receive a brief telepathic answer, which you can understand regardless of the language used. The soul knows only what it knew in life, but it must answer you truthfully and to the best of its ability. The answer is no more than a sentence or two and might be cryptic.\n\nBorrow Experience. You can use a bonus action to bolster yourself with the soul's life experience, making your next attack roll, ability check, or saving throw with advantage. If you don't use this benefit before the start of your next turn, it is lost.\n\nEyes of the Dead. You can use an action to name a place the humanoid saw in life, which creates an invisible sensor somewhere in that place if it is on the plane of existence you're currently on. The sensor remains for as long as you concentrate, up to 10 minutes (as if you were concentrating on a spell). You receive visual and auditory information from the sensor as if you were in its space using your senses.\n\nA creature that can see the sensor (such as one using see invisibility or truesight) sees a translucent image of the tormented humanoid whose soul you caged.", 
         "level": "6", 
@@ -14884,6 +14865,7 @@
             "somatic": false
         }, 
         "duration": "Instantaneous", 
+        "thumbnail_url": "images/spells/sword-burst.svg", 
         "type": "conjuration cantrip", 
         "name": "Sword Burst"
     }, 
