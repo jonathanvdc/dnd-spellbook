@@ -13976,6 +13976,7 @@
             "somatic": false
         }, 
         "duration": "Instantaneous", 
+        "thumbnail_url": "images/spells/lightning-lure.svg", 
         "type": "evocation cantrip", 
         "name": "Lightning Lure"
     }, 
