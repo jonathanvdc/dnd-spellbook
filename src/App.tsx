@@ -6,6 +6,7 @@ import { Spell, getSpellId } from './model/spell';
 import SpellCard from './SpellCard';
 import FilterableSpellbook from './FilterableSpellbook';
 import { History } from 'history';
+import SpellThumbnail from './SpellThumbnail';
 
 let allSpells: Spell[] = [];
 
@@ -73,7 +74,11 @@ class MainScreenRouter extends Component<{ match: any, history: History }, { isS
     for (let spell of allSpells) {
       searchData.push({
         key: spell.name,
-        value: <span style={{color: "black"}}>{spell.name}</span>,
+        value: <div className="SearchItem">
+          <SpellThumbnail className="SearchItemThumbnail" spell={spell} />
+          <span className="SearchItemName">{spell.name}</span>
+          <span className="SearchItemType">{spell.type}</span>
+        </div>,
         spell: spell
       });
     }

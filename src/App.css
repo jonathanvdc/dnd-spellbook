@@ -41,6 +41,7 @@ body {
 .AppBar {
   display: grid;
   grid-template-columns: auto min-content;
+  margin: 5pt 5pt 0;
 }
 
 .AppBar-searching {
@@ -49,6 +50,23 @@ body {
 
 .AppBar-searching .AppTitle {
   display: none;
+}
+
+.SearchItemName {
+  color: black;
+  font-size: large;
+}
+
+.SearchItemType {
+  color: rgb(141, 141, 141);
+  margin-left: 10pt;
+  font-size: medium;
+}
+
+.SearchItemThumbnail {
+  width: 1em;
+  height: 1em;
+  margin-right: 10pt;
 }
 
 @keyframes App-logo-spin {
