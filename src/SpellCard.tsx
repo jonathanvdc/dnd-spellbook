@@ -146,7 +146,7 @@ class SpellCard extends PureComponent<Props> {
     render() {
         let thumbnailUrl = getSpellThumbnailUrl(this.props.spell);
         return <div className="SpellCardPanel">
-            <img className="SpellThumbnail" src={thumbnailUrl} alt={this.props.spell.name + " thumbnail"} />
+            <img className="SpellCardThumbnail" src={thumbnailUrl} alt={this.props.spell.name + " thumbnail"} />
             <div className="SpellType">{this.props.spell.type}</div>
             <div className="SpellName">{this.props.spell.name}</div>
             <hr/>

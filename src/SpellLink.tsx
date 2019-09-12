@@ -6,6 +6,7 @@ import Tilt from "./Tilt";
 import { Spell, getSpellThumbnailUrl, getSpellId } from "./model/spell";
 import './SpellLink.css';
 import SpellCard from "./SpellCard";
+import SpellThumbnail from "./SpellThumbnail";
 
 /**
  * A reference to a spell, formatted as an image.
@@ -18,9 +19,8 @@ class SpellLink extends PureComponent<{spell: Spell}> {
             shiftY: 0
         };
         let spellLink = `/spell/${getSpellId(this.props.spell)}`;
-        let className = `SpellLinkThumbnail SpellLinkThumbnail-${this.props.spell.school}`;
         let linkImage = <Link className="SpellLink" to={spellLink}>
-                <img className={className} src={getSpellThumbnailUrl(this.props.spell)} alt="" />
+                <SpellThumbnail className="SpellLinkThumbnail" spell={this.props.spell} />
                 <div>{this.props.spell.name}</div>
             </Link>;
         if (isMobile) {
@@ -45,9 +45,8 @@ class SpellLink extends PureComponent<{spell: Spell}> {
 export class SpellLinkPlaceholder extends PureComponent<{spell: Spell}> {
     render() {
         let spellLink = `/spell/${getSpellId(this.props.spell)}`;
-        let className = `SpellLinkThumbnail SpellLinkThumbnail-${this.props.spell.school}`;
         return <Link className="SpellLink" to={spellLink}>
-                <div className={className} />
+                <SpellThumbnail className="SpellLinkThumbnail" spell={this.props.spell} showImage={false} />
                 <div>{this.props.spell.name}</div>
             </Link>;
     }

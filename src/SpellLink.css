@@ -1,40 +1,6 @@
 .SpellLinkThumbnail {
-    display: inline-block;
     width: 80px;
     height: 80px;
-    border-radius: 4px;
-}
-
-.SpellLinkThumbnail-abjuration {
-    background-image: radial-gradient(at 30% 30%, #82c4f2, #5e27df);
-}
-
-.SpellLinkThumbnail-conjuration {
-    background-image: radial-gradient(at 30% 30%, #bbb801, #a36a00);
-}
-
-.SpellLinkThumbnail-divination {
-    background-image: radial-gradient(at 30% 30%, #52a0d1, #213c4e);
-}
-
-.SpellLinkThumbnail-enchantment {
-    background-image: radial-gradient(at 30% 30%, #b64de7, #962a45);
-}
-
-.SpellLinkThumbnail-evocation {
-    background-image: radial-gradient(at 30% 30%, rgb(255, 138, 0), rgb(218, 27, 96));
-}
-
-.SpellLinkThumbnail-illusion {
-    background-image: radial-gradient(at 30% 30%, #c55ab3, #362b99);
-}
-
-.SpellLinkThumbnail-necromancy {
-    background-image: radial-gradient(at 30% 30%, #afac00, #2a6e09);
-}
-
-.SpellLinkThumbnail-transmutation {
-    background-image: radial-gradient(at 30% 30%, #dfbe53, #99270a);
 }
 
 .SpellLink, .SpellLink:hover {
