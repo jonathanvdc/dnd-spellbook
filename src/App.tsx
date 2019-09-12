@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import { Route, HashRouter } from 'react-router-dom';
+import ReactSearchBox from 'react-search-box';
 import './App.css';
 import { Spell, getSpellId } from './model/spell';
 import SpellCard from './SpellCard';
 import FilterableSpellbook from './FilterableSpellbook';
+import { History } from 'history';
 
 let allSpells: Spell[] = [];
 
@@ -37,11 +39,57 @@ class App extends Component<{}, Spell[]> {
   }
 }
 
-class MainScreenRouter extends Component<{ match: any }, any> {
+type SearchItem = {
+  key: string;
+  value: JSX.Element;
+  spell: Spell;
+};
+
+class MainScreenRouter extends Component<{ match: any, history: History }, { isSearching: boolean }> {
+  constructor(props: { match: any, history: History }) {
+    super(props);
+
+    this.state = {
+      isSearching: false
+    };
+  }
+
+  onSearchChange(query: string): void {
+    let searchingNow = query.length > 0;
+    if (searchingNow !== this.state.isSearching) {
+      this.setState({
+        ...this.state,
+        isSearching: searchingNow
+      });
+    }
+  }
+
+  onSearchSelect(obj: SearchItem): void {
+    this.props.history.push(`/spell/${getSpellId(obj.spell)}`);
+  }
+
   render() {
+    let searchData: SearchItem[] = [];
+    for (let spell of allSpells) {
+      searchData.push({
+        key: spell.name,
+        value: <span style={{color: "black"}}>{spell.name}</span>,
+        spell: spell
+      });
+    }
+    let searchBox = <ReactSearchBox
+      placeholder="Search spells"
+      data={searchData}
+      fuseConfigs={{keys: ['key']}}
+      onChange={this.onSearchChange.bind(this)}
+      onSelect={this.onSearchSelect.bind(this)} />;
+
     return <div>
-      <h1 className="AppTitle">Spellbook</h1>
-      <FilterableSpellbook spells={allSpells}/>
+      <div key="appBar" className={this.state.isSearching ? "AppBar AppBar-searching" : "AppBar"}>
+        <h1 className="AppTitle">Spellbook</h1>
+        {allSpells.length > 0 ? searchBox : []}
+      </div>
+      <FilterableSpellbook key="spellbook" spells={allSpells}/>
     </div>;
   }
 }

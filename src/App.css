@@ -38,6 +38,19 @@ body {
   font-family: 'Ruthie', cursive;
 }
 
+.AppBar {
+  display: grid;
+  grid-template-columns: auto min-content;
+}
+
+.AppBar-searching {
+  grid-template-columns: auto;
+}
+
+.AppBar-searching .AppTitle {
+  display: none;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
