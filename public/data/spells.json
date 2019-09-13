@@ -25,7 +25,8 @@
         }, 
         "duration": "Instantaneous", 
         "type": "2nd-level evocation", 
-        "name": "Snilloc's Snowball Swarm"
+        "name": "Snilloc's Snowball Swarm",
+        "thumbnail_url": "images/spells/snillocs-snowball-storm.svg"
     }, 
     {
         "school": "evocation", 
@@ -13042,7 +13043,8 @@
         }, 
         "duration": "Instantaneous", 
         "type": "8th-level necromancy", 
-        "name": "Abi-Dalzim's Horrid Wilting"
+        "name": "Abi-Dalzim's Horrid Wilting",
+        "thumbnail_url": "images/spells/abi-dalzims-horrid-wilting.svg"
     }, 
     {
         "school": "evocation", 
@@ -13240,7 +13242,8 @@
         }, 
         "duration": "Concentration, up to 1 minute", 
         "type": "1st-level necromancy", 
-        "name": "Cause Fear"
+        "name": "Cause Fear",
+        "thumbnail_url": "images/spells/cause-fear.svg"
     }, 
     {
         "school": "abjuration", 
@@ -13353,7 +13356,8 @@
         }, 
         "duration": "1 hour", 
         "type": "7th-level evocation", 
-        "name": "Crown of Stars"
+        "name": "Crown of Stars",
+        "thumbnail_url": "images/spells/crown-of-stars.svg"
     }, 
     {
         "school": "necromancy", 
@@ -13437,7 +13441,8 @@
         }, 
         "duration": "Concentration, up to 1 minute", 
         "type": "2nd-level transmutation", 
-        "name": "Dragon's Breath"
+        "name": "Dragon's Breath",
+        "thumbnail_url": "images/spells/dragons-breath.svg"
     }, 
     {
         "school": "conjuration", 
@@ -13787,7 +13792,8 @@
         }, 
         "duration": "Concentration, up to 1 minute", 
         "type": "8th-level illusion", 
-        "name": "Illusory Dragon"
+        "name": "Illusory Dragon",
+        "thumbnail_url": "images/spells/illusory-dragon.svg"
     }, 
     {
         "school": "conjuration", 
@@ -14177,7 +14183,8 @@
         }, 
         "duration": "Instantaneous", 
         "type": "8th-level conjuration", 
-        "name": "Mighty Fortress"
+        "name": "Mighty Fortress",
+        "thumbnail_url": "images/spells/mighty-fortress.svg"
     }, 
     {
         "school": "divination", 
@@ -14479,7 +14486,8 @@
         }, 
         "duration": "Instantaneous", 
         "type": "7th-level enchantment", 
-        "name": "Power Word Pain"
+        "name": "Power Word Pain",
+        "thumbnail_url": "images/spells/power-word-pain.svg"
     }, 
     {
         "school": "transmutation", 
@@ -14504,7 +14512,8 @@
         }, 
         "duration": "Instantaneous", 
         "type": "transmutation cantrip", 
-        "name": "Primal Savagery"
+        "name": "Primal Savagery",
+        "thumbnail_url": "images/spells/primal-savagery.svg"
     }, 
     {
         "school": "enchantment", 
@@ -14532,7 +14541,8 @@
         }, 
         "duration": "Instantaneous", 
         "type": "9th-level enchantment", 
-        "name": "Psychic Scream"
+        "name": "Psychic Scream",
+        "thumbnail_url": "images/spells/psychic-scream.svg"
     }, 
     {
         "school": "divination", 
@@ -14950,7 +14960,8 @@
         }, 
         "duration": "24 hours", 
         "type": "7th-level conjuration", 
-        "name": "Temple of the Gods"
+        "name": "Temple of the Gods",
+        "thumbnail_url": "images/spells/temple-of-the-gods.svg"
     }, 
     {
         "school": "conjuration", 
@@ -15085,7 +15096,8 @@
         }, 
         "duration": "Instantaneous", 
         "type": "necromancy cantrip", 
-        "name": "Toll the Dead"
+        "name": "Toll the Dead",
+        "thumbnail_url": "images/spells/toll-the-dead.svg"
     }, 
     {
         "school": "evocation", 
