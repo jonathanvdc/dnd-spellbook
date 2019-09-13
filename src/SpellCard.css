@@ -14,6 +14,9 @@
 
 .SpellCardPanel {
     /* max-width: 20em; */
+    display: grid;
+    height: 100%;
+    grid-template-rows: auto min-content;
     text-align: center;
     font-family: Palatino,Palatino Linotype,Palatino LT STD,Book Antiqua,Georgia,serif;
     font-style: normal;
@@ -21,6 +24,12 @@
     background: #f8f5eb;
     color: black;
     padding: 14px;
+}
+
+.SpellCardFooter {
+    color: rgb(70, 70, 70);
+    font-size: small;
+    text-align: left;
 }
 
 .SpellDescription {

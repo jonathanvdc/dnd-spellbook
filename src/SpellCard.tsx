@@ -1,5 +1,5 @@
 import React, { PureComponent } from "react";
-import { Spell, getSpellThumbnailUrl } from "./model/spell";
+import { Spell, getSpellThumbnailUrl, getLicenseName, getLicenseUrl } from "./model/spell";
 import ReactMarkdown from "react-markdown";
 import { Link } from "react-router-dom";
 import "./SpellCard.css";
@@ -143,19 +143,53 @@ class SpellCard extends PureComponent<Props> {
         }
     }
 
+    createExternalLink(text: string, url?: string): JSX.Element | string {
+        if (!url || url.length === 0 || this.props.hide_links) {
+            return text;
+        } else {
+            return <a href={url}>{text}</a>;
+        }
+    }
+
+    createThumbnailSourceCitation(): (JSX.Element | string)[] {
+        let sources = this.props.spell.thumbnail_source;
+        if (!sources || sources.length === 0) {
+            return [];
+        } else {
+            // TODO: cite all sources.
+            let firstSource = sources[0];
+            return [
+                "Thumbnail: '",
+                this.createExternalLink(firstSource.title, firstSource.url),
+                "' by ",
+                this.createExternalLink(firstSource.author, firstSource.author_website),
+                ", licensed under ",
+                this.createExternalLink(getLicenseName(firstSource.license), getLicenseUrl(firstSource.license)),
+                "."
+            ];
+        }
+    }
+
     render() {
         let thumbnailUrl = getSpellThumbnailUrl(this.props.spell);
+        let thumbnailSource = this.createThumbnailSourceCitation();
         return <div className="SpellCardPanel">
-            <img className="SpellCardThumbnail" src={thumbnailUrl} alt={this.props.spell.name + " thumbnail"} />
-            <div className="SpellType">{this.props.spell.type}</div>
-            <div className="SpellName">{this.props.spell.name}</div>
-            <hr/>
-            {this.createPropertiesGrid()}
-            <hr/>
-            {this.createDescription()}
-            <hr/>
-            {this.createFootnotes()}
-            {this.createSourceCitation()}
+            <div className="SpellCardDescription">
+                <img className="SpellCardThumbnail" src={thumbnailUrl} alt={this.props.spell.name + " thumbnail"} />
+                <div className="SpellType">{this.props.spell.type}</div>
+                <div className="SpellName">{this.props.spell.name}</div>
+                <hr/>
+                {this.createPropertiesGrid()}
+                <hr/>
+                {this.createDescription()}
+                <hr/>
+                {this.createFootnotes()}
+                {this.createSourceCitation()}
+            </div>
+            <div className="SpellCardFooter">
+                {thumbnailSource.length > 0 ? <hr/> : []}
+                {this.createThumbnailSourceCitation()}
+            </div>
         </div>;
     }
 }
