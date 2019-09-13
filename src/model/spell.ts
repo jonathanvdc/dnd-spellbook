@@ -132,6 +132,67 @@ export type SpellSource = {
 };
 
 /**
+ * A code that specifies a particular license.
+ */
+export type LicenseCode = 'CC-BY-3.0' | 'CC0-1.0';
+
+/**
+ * Gets a license's name based on its code.
+ * @param code A license code.
+ */
+export function getLicenseName(code: LicenseCode): string {
+    switch (code) {
+        case 'CC-BY-3.0':
+            return 'Creative Commons Attribution 3.0 Unported';
+        case 'CC0-1.0':
+            return 'Creative Commons CC0 1.0 Universal';
+    }
+}
+
+/**
+ * Gets a URL to a license's text based on its code.
+ * @param code A license code.
+ */
+export function getLicenseUrl(code: LicenseCode): string {
+    switch (code) {
+        case 'CC-BY-3.0':
+            return 'https://creativecommons.org/licenses/by/3.0/legalcode';
+        case 'CC0-1.0':
+            return 'https://creativecommons.org/publicdomain/zero/1.0/legalcode';
+    }
+}
+
+/**
+ * A description of a thumbnail's source.
+ */
+export type ThumbnailSource = {
+    /**
+     * The thumbnail's title: its name or file name.
+     */
+    title: string;
+
+    /**
+     * A URL to the thumbnail's original site.
+     */
+    url?: string;
+
+    /**
+     * The license under which the thumbnail is licensed.
+     */
+    license: LicenseCode;
+
+    /**
+     * The name of the thumbnail's author.
+     */
+    author: string;
+
+    /**
+     * The author's website, if any.
+     */
+    author_website?: string;
+};
+
+/**
  * A description of a spell.
  */
 export type Spell = {
@@ -204,6 +265,11 @@ export type Spell = {
      * An optional URL to the spell's thumbnail.
      */
     thumbnail_url?: string;
+
+    /**
+     * An optional list of 
+     */
+    thumbnail_source?: ThumbnailSource[];
 
     /**
      * An optional accent color for the spell.
