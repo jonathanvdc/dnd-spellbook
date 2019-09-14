@@ -6280,7 +6280,17 @@
             "cleric", 
             "level3"
         ], 
-        "name": "Spirit Guardians"
+        "name": "Spirit Guardians", 
+        "thumbnail_url": "images/spells/spirit-guardians.svg", 
+        "thumbnail_source": [
+            {
+                "url": "https://game-icons.net/1x1/delapouite/djinn.html", 
+                "author": "Delapouite", 
+                "author_website": "http://delapouite.com", 
+                "license": "CC-BY-3.0", 
+                "title": "Djinn"
+            }
+        ]
     }, 
     {
         "school": "conjuration", 
@@ -16211,7 +16221,17 @@
         }, 
         "duration": "1 hour", 
         "higher_levels": "When you cast this spell using a spell slot of 2nd level or higher, both the temporary hit points and the cold damage increase by 5 for each slot", 
-        "name": "Armor of Agathys"
+        "name": "Armor of Agathys", 
+        "thumbnail_url": "images/spells/armor-of-agathys.svg", 
+        "thumbnail_source": [
+            {
+                "url": "https://game-icons.net/1x1/lorc/icicles-aura.html", 
+                "author": "Lorc", 
+                "author_website": "http://lorcblog.blogspot.com", 
+                "license": "CC-BY-3.0", 
+                "title": "Icicles Aura"
+            }
+        ]
     }, 
     {
         "school": "conjuration", 
@@ -16325,7 +16345,17 @@
         }, 
         "duration": "10 minutes", 
         "higher_levels": "When you cast this spell using a spell slot of 4th level or higher, you can target one additional willing creature for each slot level above 3rd.", 
-        "name": "Catnap"
+        "name": "Catnap", 
+        "thumbnail_url": "images/spells/catnap.svg", 
+        "thumbnail_source": [
+            {
+                "url": "https://game-icons.net/1x1/lorc/cat.html", 
+                "author": "Lorc", 
+                "author_website": "http://lorcblog.blogspot.com", 
+                "license": "CC-BY-3.0", 
+                "title": "Cat"
+            }
+        ]
     }, 
     {
         "school": "necromancy", 
@@ -16389,7 +16419,17 @@
         }, 
         "duration": "Instantaneous", 
         "type": "1st-level abjuration (ritual)", 
-        "name": "Ceremony"
+        "name": "Ceremony", 
+        "thumbnail_url": "images/spells/ceremony.svg", 
+        "thumbnail_source": [
+            {
+                "url": "https://game-icons.net/1x1/delapouite/candles.html", 
+                "author": "Delapouite", 
+                "author_website": "http://delapouite.com", 
+                "license": "CC-BY-3.0", 
+                "title": "Candles"
+            }
+        ]
     }, 
     {
         "school": "enchantment", 
@@ -16511,7 +16551,17 @@
         }, 
         "duration": "Concentration, up to 1 hour", 
         "higher_levels": "When you cast this spell using a spell slot\u2018 of 6th level or higher, you animate up to two additional corpses for each slot level above 5th.", 
-        "name": "Danse Macabre"
+        "name": "Danse Macabre", 
+        "thumbnail_url": "images/spells/danse-macabre.svg", 
+        "thumbnail_source": [
+            {
+                "url": "https://game-icons.net/1x1/lorc/skeleton-inside.html", 
+                "author": "Lorc", 
+                "author_website": "http://lorcblog.blogspot.com", 
+                "license": "CC-BY-3.0", 
+                "title": "Skeleton Inside"
+            }
+        ]
     }, 
     {
         "school": "evocation", 
@@ -16539,7 +16589,17 @@
         }, 
         "duration": "Concentration, up to 1 minute", 
         "type": "5th-level evocation", 
-        "name": "Dawn"
+        "name": "Dawn", 
+        "thumbnail_url": "images/spells/dawn.svg", 
+        "thumbnail_source": [
+            {
+                "url": "https://game-icons.net/1x1/lorc/sunrise.html", 
+                "author": "Lorc", 
+                "author_website": "http://lorcblog.blogspot.com", 
+                "license": "CC-BY-3.0", 
+                "title": "Sunrise"
+            }
+        ]
     }, 
     {
         "school": "transmutation", 
@@ -16660,7 +16720,17 @@
         }, 
         "duration": "Concentration, up to 1 minute", 
         "type": "3th-level enchantment", 
-        "name": "Enemies abound"
+        "name": "Enemies abound", 
+        "thumbnail_url": "images/spells/enemies-abound.svg", 
+        "thumbnail_source": [
+            {
+                "url": "https://game-icons.net/1x1/lorc/dark-squad.html", 
+                "author": "Lorc", 
+                "author_website": "http://lorcblog.blogspot.com", 
+                "license": "CC-BY-3.0", 
+                "title": "Dark Squad"
+            }
+        ]
     }, 
     {
         "school": "necromancy", 
@@ -16715,7 +16785,17 @@
         }, 
         "duration": "Concentration, up to 1 minute", 
         "type": "4th-level conjuration", 
-        "name": "Evard's Black Tentacles"
+        "name": "Evard's Black Tentacles", 
+        "thumbnail_url": "images/spells/evards-black-tentacles.svg", 
+        "thumbnail_source": [
+            {
+                "url": "https://game-icons.net/1x1/lorc/interlaced-tentacles.html", 
+                "author": "Lorc", 
+                "author_website": "http://lorcblog.blogspot.com", 
+                "license": "CC-BY-3.0", 
+                "title": "Interlaced Tentacles"
+            }
+        ]
     }, 
     {
         "school": "conjuration", 
@@ -16850,7 +16930,17 @@
         }, 
         "duration": "Concentration, up to 1 minute", 
         "higher_levels": "When you cast this spell using a spell slot of 3rd level or higher, the healing increases 1d6 for each slot level above 2nd.", 
-        "name": "Healing Spirit"
+        "name": "Healing Spirit", 
+        "thumbnail_url": "images/spells/healing-spirit.svg", 
+        "thumbnail_source": [
+            {
+                "url": "https://game-icons.net/1x1/lorc/ifrit.html", 
+                "author": "Lorc", 
+                "author_website": "http://lorcblog.blogspot.com", 
+                "license": "CC-BY-3.0", 
+                "title": "Ifrit"
+            }
+        ]
     }, 
     {
         "school": "evocation", 
@@ -16997,7 +17087,17 @@
         }, 
         "duration": "Instantaneous", 
         "type": "conjuration cantrip", 
-        "name": "Infestation"
+        "name": "Infestation", 
+        "thumbnail_url": "images/spells/infestation.svg", 
+        "thumbnail_source": [
+            {
+                "url": "https://game-icons.net/1x1/lorc/mite.html", 
+                "author": "Lorc", 
+                "author_website": "http://lorcblog.blogspot.com", 
+                "license": "CC-BY-3.0", 
+                "title": "Mite"
+            }
+        ]
     }, 
     {
         "school": "abjuration", 
@@ -17079,7 +17179,17 @@
         }, 
         "duration": "8 hours", 
         "type": "3th-level evocation (ritual)", 
-        "name": "Leomund's Tiny Hut"
+        "name": "Leomund's Tiny Hut", 
+        "thumbnail_url": "images/spells/leomunds-tiny-hut.svg", 
+        "thumbnail_source": [
+            {
+                "url": "https://game-icons.net/1x1/delapouite/hut.html", 
+                "author": "Delapouite", 
+                "author_website": "http://delapouite.com", 
+                "license": "CC-BY-3.0", 
+                "title": "Hut"
+            }
+        ]
     }, 
     {
         "school": "necromancy", 
@@ -17859,7 +17969,17 @@
         }, 
         "duration": "Concentration, up to 10 minutes", 
         "type": "4th-level evocation", 
-        "name": "Sickening Radiance"
+        "name": "Sickening Radiance", 
+        "thumbnail_url": "images/spells/sickening-radiance.svg", 
+        "thumbnail_source": [
+            {
+                "url": "https://game-icons.net/1x1/delapouite/shambling-zombie.html", 
+                "author": "Delapouite", 
+                "author_website": "http://delapouite.com", 
+                "license": "CC-BY-3.0", 
+                "title": "Shambling Zombie"
+            }
+        ]
     }, 
     {
         "school": "transmutation", 
@@ -18000,7 +18120,17 @@
         }, 
         "duration": "Concentration, up to 1 hour", 
         "higher_levels": "When you cast this spell using a spell slot of 5th level or higher, the challenge rating increases by 1 for each slot level above 4th.", 
-        "name": "Summon Greater Demon"
+        "name": "Summon Greater Demon", 
+        "thumbnail_url": "images/spells/summon-greater-demon.svg", 
+        "thumbnail_source": [
+            {
+                "url": "https://game-icons.net/1x1/delapouite/devil-mask.html", 
+                "author": "Delapouite", 
+                "author_website": "http://delapouite.com", 
+                "license": "CC-BY-3.0", 
+                "title": "Devil Mask"
+            }
+        ]
     }, 
     {
         "school": "conjuration", 
@@ -18029,7 +18159,17 @@
         }, 
         "duration": "Concentration, up to 1 hour", 
         "higher_levels": "When you cast this spell using a spell slot of 6th or 7th level, you summon twice as many demons. If you cast it using a spell slot of 8th or 9th level, you summon three times as many demons.", 
-        "name": "Summon Lesser Demons"
+        "name": "Summon Lesser Demons", 
+        "thumbnail_url": "images/spells/summon-lesser-demons.svg", 
+        "thumbnail_source": [
+            {
+                "url": "https://game-icons.net/1x1/lorc/horned-skull.html", 
+                "author": "Lorc", 
+                "author_website": "http://lorcblog.blogspot.com", 
+                "license": "CC-BY-3.0", 
+                "title": "Horned Skull"
+            }
+        ]
     }, 
     {
         "school": "conjuration", 
@@ -18178,7 +18318,17 @@
         }, 
         "duration": "1 hour", 
         "type": "1st-level conjuration (ritual)", 
-        "name": "Tenser's Floating Disk"
+        "name": "Tenser's Floating Disk", 
+        "thumbnail_url": "images/spells/tensers-floating-disk.svg", 
+        "thumbnail_source": [
+            {
+                "url": "https://game-icons.net/1x1/delapouite/frisbee.html", 
+                "author": "Delapouite", 
+                "author_website": "http://delapouite.com", 
+                "license": "CC-BY-3.0", 
+                "title": "Frisbee"
+            }
+        ]
     }, 
     {
         "school": "transmutation", 
