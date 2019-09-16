@@ -13,9 +13,9 @@ class LinterResults extends PureComponent<{ spells: Spell[] }> {
         let diagnostics = lint(this.props.spells);
         let errorList = diagnostics.length === 0
             ? "Nothing to report. Have a great day!"
-            : <ul className="LinterDiagnosticList">
+            : <ol className="LinterDiagnosticList">
                 {diagnostics.map(d => <li><Link to={createSpellUrl(d.source)}>{d.source.name}</Link>: <b>{d.severity}:</b> {d.message}</li>)}
-            </ul>;
+            </ol>;
         return <div>
             <h1>Linter results</h1>
             {errorList}
