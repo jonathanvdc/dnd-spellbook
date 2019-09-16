@@ -46,7 +46,8 @@ export function lint(spells: Spell[]): Diagnostic<Spell>[] {
  */
 const checks: Check<Spell>[] = [
     materialsAreConsistent,
-    higherLevelsNotInDescription
+    higherLevelsNotInDescription,
+    spellHasSource
 ];
 
 /**
@@ -104,4 +105,40 @@ function higherLevelsNotInDescription(spell: Spell): Diagnostic<Spell>[] {
         }
     }
     return results;
+}
+
+/**
+ * Checks that a spell has a 'source' property.
+ * @param spell A spell to check.
+ */
+function spellHasSource(spell: Spell): Diagnostic<Spell>[] {
+    if (!spell.source) {
+        return [
+            {
+                severity: "warning",
+                message: "spell does not have a 'source' property.",
+                source: spell
+            }
+        ];
+    }
+    let src = spell.source as any;
+    if (!src.document) {
+        return [
+            {
+                severity: "error",
+                message: "the 'source' property value does not define a 'document' property.",
+                source: spell
+            }
+        ];
+    } else if (!spell.source.pages) {
+        return [
+            {
+                severity: "warning",
+                message: "the 'source' property value does not define a 'pages' property.",
+                source: spell
+            }
+        ];
+    } else {
+        return [];
+    }
 }
