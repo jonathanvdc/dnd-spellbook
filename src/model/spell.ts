@@ -24,11 +24,6 @@ export type SpellComponents = {
      */
     materials_needed?: string[];
     /**
-     * A raw description of a spell's components, formatted
-     * as a string.
-     */
-    raw: string;
-    /**
      * Tells if a spell has a somatic component.
      */
     somatic: boolean;
@@ -250,16 +245,6 @@ export type Spell = {
      * The school of magic to which the spell belongs.
      */
     school: School;
-
-    /**
-     * A list of tags.
-     */
-    tags: string[];
-
-    /**
-     * The spell's type.
-     */
-    type: string;
 
     /**
      * An optional URL to the spell's thumbnail.

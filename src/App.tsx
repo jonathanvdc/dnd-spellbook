@@ -2,7 +2,7 @@ import React, { Component, lazy, Suspense } from 'react';
 import { Route, HashRouter } from 'react-router-dom';
 import ReactSearchBox from 'react-search-box';
 import './App.css';
-import { Spell, getSpellId } from './model/spell';
+import { Spell, getSpellId, getSpellType } from './model/spell';
 import SpellCard from './SpellCard';
 import FilterableSpellbook from './FilterableSpellbook';
 import { History } from 'history';
@@ -81,7 +81,7 @@ class MainScreenRouter extends Component<{ match: any, history: History }, { isS
         value: <div className="SearchItem">
           <SpellThumbnail className="SearchItemThumbnail" spell={spell} />
           <span className="SearchItemName">{spell.name}</span>
-          <span className="SearchItemType">{spell.type}</span>
+          <span className="SearchItemType">{getSpellType(spell)}</span>
         </div>,
         spell: spell
       });
