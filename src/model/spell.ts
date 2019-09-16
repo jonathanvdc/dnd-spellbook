@@ -164,7 +164,7 @@ export type ThumbnailSource = {
     /**
      * The thumbnail's title: its name or file name.
      */
-    title: string;
+    title?: string;
 
     /**
      * A URL to the thumbnail's original site.

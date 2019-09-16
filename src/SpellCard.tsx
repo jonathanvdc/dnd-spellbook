@@ -1,5 +1,5 @@
 import React, { PureComponent } from "react";
-import { Spell, getSpellThumbnailUrl, getLicenseName, getLicenseUrl, getSpellType } from "./model/spell";
+import { Spell, getSpellThumbnailUrl, getLicenseName, getLicenseUrl, getSpellType, ThumbnailSource } from "./model/spell";
 import ReactMarkdown from "react-markdown";
 import { Link } from "react-router-dom";
 import "./SpellCard.css";
@@ -152,22 +152,41 @@ class SpellCard extends PureComponent<Props> {
         }
     }
 
+    citeIconSource(source: ThumbnailSource, omitTitle?: boolean): (JSX.Element | string)[] {
+        let results: (JSX.Element | string)[] = [];
+        if (source.title) {
+            results.push(
+                "'",
+                this.createExternalLink(source.title, source.url),
+                "'");
+        } else if (!omitTitle) {
+            results.push(this.createExternalLink("an icon", source.url));
+        }
+        results.push(
+            " by ",
+            this.createExternalLink(source.author, source.author_website),
+            ", licensed under ",
+            this.createExternalLink(getLicenseName(source.license), getLicenseUrl(source.license)),
+            ".");
+        return results;
+    }
+
     createFooter(): (JSX.Element | string)[] {
         let sources = this.props.spell.thumbnail_source;
         if (!sources || sources.length === 0 || this.props.hide_footer) {
             return [];
         } else {
-            // TODO: cite all sources.
             let firstSource = sources[0];
-            return [
-                "Thumbnail: '",
-                this.createExternalLink(firstSource.title, firstSource.url),
-                "' by ",
-                this.createExternalLink(firstSource.author, firstSource.author_website),
-                ", licensed under ",
-                this.createExternalLink(getLicenseName(firstSource.license), getLicenseUrl(firstSource.license)),
-                "."
-            ];
+            let results: (JSX.Element | string)[] = [];
+            if (firstSource.title) {
+                results.push("Icon: ", ...this.citeIconSource(firstSource));
+            } else {
+                results.push(this.createExternalLink("Icon", firstSource.url), " ", ...this.citeIconSource(firstSource, true));
+            }
+            for (let i = 1; i < sources.length; i++) {
+                results.push(" Based on ", ...this.citeIconSource(sources[i]));
+            }
+            return results;
         }
     }
 
