@@ -129,7 +129,11 @@ export type SpellSource = {
 /**
  * A code that specifies a particular license.
  */
-export type LicenseCode = 'CC-BY-3.0' | 'CC0-1.0';
+export type LicenseCode =
+    'CC-BY-3.0' | 'CC0-1.0'
+    | 'GPL-1.0-only' | 'GPL-1.0-or-later'
+    | 'GPL-2.0-only' | 'GPL-2.0-or-later'
+    | 'GPL-3.0-only' | 'GPL-3.0-or-later';
 
 /**
  * Gets a license's name based on its code.
@@ -141,7 +145,36 @@ export function getLicenseName(code: LicenseCode): string {
             return 'Creative Commons Attribution 3.0 Unported';
         case 'CC0-1.0':
             return 'Creative Commons CC0 1.0 Universal';
+
+        case 'GPL-1.0-only':
+            return 'GNU General Public License v1.0 only';
+        case 'GPL-1.0-or-later':
+            return 'GNU General Public License v1.0 or later';
+        case 'GPL-2.0-only':
+            return 'GNU General Public License v2.0 only';
+        case 'GPL-2.0-or-later':
+            return 'GNU General Public License v2.0 or later';
+        case 'GPL-3.0-only':
+            return 'GNU General Public License v3.0 only';
+        case 'GPL-3.0-or-later':
+            return 'GNU General Public License v3.0 or later';
     }
+}
+
+/**
+ * Gets a license's name based on its code. If possible, the license
+ * is shortened.
+ * @param code A license code.
+ */
+export function getShortLicenseName(code: LicenseCode): string {
+    let name = getLicenseName(code);
+    let suffices = ["only", "or later"];
+    for (let suffix of suffices) {
+        if (name.endsWith(suffix)) {
+            name = name.substring(0, name.length - suffix.length).trimRight();
+        }
+    }
+    return name;
 }
 
 /**
@@ -154,6 +187,19 @@ export function getLicenseUrl(code: LicenseCode): string {
             return 'https://creativecommons.org/licenses/by/3.0/legalcode';
         case 'CC0-1.0':
             return 'https://creativecommons.org/publicdomain/zero/1.0/legalcode';
+
+        case 'GPL-1.0-only':
+            return 'https://www.gnu.org/licenses/old-licenses/gpl-1.0-standalone.html';
+        case 'GPL-1.0-or-later':
+            return 'https://www.gnu.org/licenses/old-licenses/gpl-1.0-standalone.html';
+        case 'GPL-2.0-only':
+            return 'https://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html';
+        case 'GPL-2.0-or-later':
+            return 'https://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html';
+        case 'GPL-3.0-only':
+            return 'https://www.gnu.org/licenses/gpl-3.0-standalone.html';
+        case 'GPL-3.0-or-later':
+            return 'https://www.gnu.org/licenses/gpl-3.0-standalone.html';
     }
 }
 

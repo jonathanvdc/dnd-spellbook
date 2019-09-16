@@ -1,5 +1,5 @@
 import React, { PureComponent } from "react";
-import { Spell, getSpellThumbnailUrl, getLicenseName, getLicenseUrl, getSpellType, ThumbnailSource } from "./model/spell";
+import { Spell, getSpellThumbnailUrl, getShortLicenseName, getLicenseUrl, getSpellType, ThumbnailSource } from "./model/spell";
 import ReactMarkdown from "react-markdown";
 import { Link } from "react-router-dom";
 import "./SpellCard.css";
@@ -166,7 +166,7 @@ class SpellCard extends PureComponent<Props> {
             " by ",
             this.createExternalLink(source.author, source.author_website),
             ", licensed under ",
-            this.createExternalLink(getLicenseName(source.license), getLicenseUrl(source.license)),
+            this.createExternalLink(getShortLicenseName(source.license), getLicenseUrl(source.license)),
             ".");
         return results;
     }
