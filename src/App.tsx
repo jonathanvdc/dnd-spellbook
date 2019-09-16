@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, lazy, Suspense } from 'react';
 import { Route, HashRouter } from 'react-router-dom';
 import ReactSearchBox from 'react-search-box';
 import './App.css';
@@ -7,7 +7,7 @@ import SpellCard from './SpellCard';
 import FilterableSpellbook from './FilterableSpellbook';
 import { History } from 'history';
 import SpellThumbnail from './SpellThumbnail';
-import LinterResults from './LinterResults';
+const LinterResults = lazy(() => import('./LinterResults'))
 
 let allSpells: Spell[] = [];
 
@@ -32,9 +32,11 @@ class App extends Component<{}, Spell[]> {
       <HashRouter>
         <div className="App">
           <header className="App-header">
-            <Route exact={true} path="/" component={MainScreenRouter} />
-            <Route path="/spell/:spellId" component={SpellRoute} />
-            <Route path="/linter" component={LinterRoute} />
+            <Suspense fallback={<div>Loading...</div>}>
+              <Route exact={true} path="/" component={MainScreenRouter} />
+              <Route path="/spell/:spellId" component={SpellRoute} />
+              <Route path="/linter" component={LinterRoute} />
+            </Suspense>
           </header>
         </div>
       </HashRouter>

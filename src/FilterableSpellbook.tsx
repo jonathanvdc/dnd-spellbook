@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import { Spell, Class, allClasses } from "./model/spell";
 import Spellbook from "./Spellbook";
-import { ToggleButtonGroup, ToggleButton } from "react-bootstrap";
+import ToggleButton from "react-bootstrap/ToggleButton";
+import ToggleButtonGroup from "react-bootstrap/ToggleButtonGroup";
 import "./FilterableSpellbook.css";
 
 type Props = { spells: Spell[] };
