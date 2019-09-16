@@ -33,7 +33,7 @@ class SpellLink extends PureComponent<{spell: Spell}> {
                     <ReactHover.Hover type='hover'>
                         <div className="ExtraSpellBox">
                             <Link className="ExtraSpellLink" to={spellLink}>
-                                <SpellCard spell={this.props.spell} hide_links />
+                                <SpellCard spell={this.props.spell} hide_links hide_footer />
                             </Link>
                         </div>
                     </ReactHover.Hover>

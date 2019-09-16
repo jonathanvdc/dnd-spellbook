@@ -8,6 +8,7 @@ import "./hr.css";
 type Props = {
     spell: Spell;
     hide_links?: boolean;
+    hide_footer?: boolean;
 };
 
 const html_whitelist = [
@@ -151,9 +152,9 @@ class SpellCard extends PureComponent<Props> {
         }
     }
 
-    createThumbnailSourceCitation(): (JSX.Element | string)[] {
+    createFooter(): (JSX.Element | string)[] {
         let sources = this.props.spell.thumbnail_source;
-        if (!sources || sources.length === 0) {
+        if (!sources || sources.length === 0 || this.props.hide_footer) {
             return [];
         } else {
             // TODO: cite all sources.
@@ -172,7 +173,7 @@ class SpellCard extends PureComponent<Props> {
 
     render() {
         let thumbnailUrl = getSpellThumbnailUrl(this.props.spell);
-        let thumbnailSource = this.createThumbnailSourceCitation();
+        let thumbnailSource = this.createFooter();
         return <div className="SpellCardPanel">
             <div className="SpellCardDescription">
                 <img className="SpellCardThumbnail" src={thumbnailUrl} alt={this.props.spell.name + " thumbnail"} />
@@ -188,7 +189,7 @@ class SpellCard extends PureComponent<Props> {
             </div>
             <div className="SpellCardFooter">
                 {thumbnailSource.length > 0 ? <hr/> : []}
-                {this.createThumbnailSourceCitation()}
+                {this.createFooter()}
             </div>
         </div>;
     }
