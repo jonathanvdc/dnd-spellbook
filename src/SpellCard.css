@@ -53,6 +53,7 @@
     height: 100px;
     display: inline-block;
     filter: brightness(20%);
+    user-select: none;
 }
 
 .SpellFootnote {
