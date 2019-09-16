@@ -7,6 +7,7 @@ import SpellCard from './SpellCard';
 import FilterableSpellbook from './FilterableSpellbook';
 import { History } from 'history';
 import SpellThumbnail from './SpellThumbnail';
+import LinterResults from './LinterResults';
 
 let allSpells: Spell[] = [];
 
@@ -33,6 +34,7 @@ class App extends Component<{}, Spell[]> {
           <header className="App-header">
             <Route exact={true} path="/" component={MainScreenRouter} />
             <Route path="/spell/:spellId" component={SpellRoute} />
+            <Route path="/linter" component={LinterRoute} />
           </header>
         </div>
       </HashRouter>
@@ -117,6 +119,15 @@ class SpellRoute extends Component<{ match: any }, any> {
         Spell with ID '{this.props.match.params.spellId}' not found.
       </div>;
     }
+  }
+}
+
+class LinterRoute extends Component<{ match: any }, any> {
+  render() {
+    if (allSpells.length === 0) {
+      return <div></div>;
+    }
+    return <LinterResults spells={allSpells} />;
   }
 }
 

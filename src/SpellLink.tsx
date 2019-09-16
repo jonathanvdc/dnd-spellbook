@@ -9,6 +9,14 @@ import SpellCard from "./SpellCard";
 import SpellThumbnail from "./SpellThumbnail";
 
 /**
+ * Creates a URL to a spell card.
+ * @param spell The spell to create a URL for.
+ */
+export function createSpellUrl(spell: Spell) {
+    return `/spell/${getSpellId(spell)}`;
+}
+
+/**
  * A reference to a spell, formatted as an image.
  */
 class SpellLink extends PureComponent<{spell: Spell}> {
@@ -18,7 +26,7 @@ class SpellLink extends PureComponent<{spell: Spell}> {
             shiftX: 20,
             shiftY: 0
         };
-        let spellLink = `/spell/${getSpellId(this.props.spell)}`;
+        let spellLink = createSpellUrl(this.props.spell);
         let linkImage = <Link className="SpellLink" to={spellLink}>
                 <SpellThumbnail className="SpellLinkThumbnail" spell={this.props.spell} />
                 <div>{this.props.spell.name}</div>
@@ -44,7 +52,7 @@ class SpellLink extends PureComponent<{spell: Spell}> {
 
 export class SpellLinkPlaceholder extends PureComponent<{spell: Spell}> {
     render() {
-        let spellLink = `/spell/${getSpellId(this.props.spell)}`;
+        let spellLink = createSpellUrl(this.props.spell);
         return <Link className="SpellLink" to={spellLink}>
                 <SpellThumbnail className="SpellLinkThumbnail" spell={this.props.spell} showImage={false} />
                 <div>{this.props.spell.name}</div>
