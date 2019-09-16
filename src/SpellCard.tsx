@@ -118,6 +118,12 @@ class SpellCard extends PureComponent<Props> {
      */
     createDescription(): JSX.Element {
         let baseDesc = this.formatDescription(this.props.spell.description);
+        if (this.props.spell.quote && this.props.spell.quote.length > 0) {
+            baseDesc = <div>
+                <div className="SpellCardFlavorQuote">“{this.props.spell.quote}”</div>
+                {baseDesc}
+            </div>;
+        }
         if (this.props.spell.higher_levels) {
             return <div>
                 {baseDesc}

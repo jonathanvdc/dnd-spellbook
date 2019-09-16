@@ -311,6 +311,11 @@ export type Spell = {
      * The document in which the spell was originally described.
      */
     source?: SpellSource;
+
+    /**
+     * A flavor quote.
+     */
+    quote?: string;
 };
 
 /**
