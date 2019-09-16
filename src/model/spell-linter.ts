@@ -47,7 +47,8 @@ export function lint(spells: Spell[]): Diagnostic<Spell>[] {
 const checks: Check<Spell>[] = [
     materialsAreConsistent,
     higherLevelsNotInDescription,
-    spellHasSource
+    spellHasSource,
+    thumbnailHasSource
 ];
 
 /**
@@ -135,6 +136,25 @@ function spellHasSource(spell: Spell): Diagnostic<Spell>[] {
             {
                 severity: "warning",
                 message: "the 'source' property value does not define a 'pages' property.",
+                source: spell
+            }
+        ];
+    } else {
+        return [];
+    }
+}
+
+/**
+ * Checks that a spell lists a source for its thumbnail, provided that it
+ * has a thumbnail.
+ * @param spell A spell to check.
+ */
+function thumbnailHasSource(spell: Spell): Diagnostic<Spell>[] {
+    if (spell.thumbnail_url && !spell.thumbnail_source) {
+        return [
+            {
+                severity: "warning",
+                message: "spell has a 'thumbnail_url' property but no accompanying 'thumbnail_source' property.",
                 source: spell
             }
         ];
