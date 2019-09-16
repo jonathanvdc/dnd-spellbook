@@ -289,10 +289,13 @@ export function getSpellId(spell: Spell): string {
 }
 
 function getOrinalSuffix(i: number) {
-    if (i === 1) {
+    let last = i % 10;
+    if (last === 1) {
         return 'st';
-    } else if (i === 2) {
+    } else if (last === 2) {
         return 'nd';
+    } else if (last === 3) {
+        return 'rd';
     } else {
         return 'th';
     }
