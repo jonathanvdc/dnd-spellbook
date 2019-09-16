@@ -1,5 +1,5 @@
 import React, { PureComponent } from "react";
-import { Spell, getSpellThumbnailUrl, getLicenseName, getLicenseUrl } from "./model/spell";
+import { Spell, getSpellThumbnailUrl, getLicenseName, getLicenseUrl, getSpellType } from "./model/spell";
 import ReactMarkdown from "react-markdown";
 import { Link } from "react-router-dom";
 import "./SpellCard.css";
@@ -177,7 +177,7 @@ class SpellCard extends PureComponent<Props> {
         return <div className="SpellCardPanel">
             <div className="SpellCardDescription">
                 <img className="SpellCardThumbnail" src={thumbnailUrl} alt={this.props.spell.name + " thumbnail"} />
-                <div className="SpellType">{this.props.spell.type}</div>
+                <div className="SpellType">{getSpellType(this.props.spell)}</div>
                 <div className="SpellName">{this.props.spell.name}</div>
                 <hr/>
                 {this.createPropertiesGrid()}

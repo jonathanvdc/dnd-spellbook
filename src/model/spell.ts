@@ -302,3 +302,26 @@ export function getSpellId(spell: Spell): string {
     }
     return enc;
 }
+
+function getOrinalSuffix(i: number) {
+    if (i === 1) {
+        return 'st';
+    } else if (i === 2) {
+        return 'nd';
+    } else {
+        return 'th';
+    }
+}
+
+export function getSpellType(spell: Spell) {
+    let result: string;
+    if (spell.level === "cantrip") {
+        result = `${spell.school} cantrip`;
+    } else {
+        result = `${spell.level}${getOrinalSuffix(parseInt(spell.level))}-level ${spell.school}`;
+    }
+    if (spell.ritual) {
+        result += " (ritual)";
+    }
+    return result;
+}
