@@ -45,7 +45,8 @@ export function lint(spells: Spell[]): Diagnostic<Spell>[] {
  * An enumeration of all checks available to the linter.
  */
 const checks: Check<Spell>[] = [
-    materialsAreConsistent
+    materialsAreConsistent,
+    higherLevelsNotInDescription
 ];
 
 /**
@@ -73,4 +74,33 @@ function materialsAreConsistent(spell: Spell): Diagnostic<Spell>[] {
     } else {
         return [];
     }
+}
+
+/**
+ * Checks that the 'higher levels' description does not appear in the normal
+ * description.
+ * @param spell A spell to check.
+ */
+function higherLevelsNotInDescription(spell: Spell): Diagnostic<Spell>[] {
+    let results: Diagnostic<Spell>[] = [];
+    if (spell.higher_levels) {
+        if (spell.description.includes(spell.higher_levels)) {
+            results.push({
+                severity: "warning",
+                message: "spell includes 'higher_levels' description in its normal description.",
+                source: spell
+            });
+        }
+    }
+    let lowerDesc = spell.description.toLowerCase();
+    for (let term of ["at higher levels", "higher-level slot"]) {
+        if (lowerDesc.includes(term)) {
+            results.push({
+                severity: "warning",
+                message: `spell mentions '${term}' in its description. Should this be part of the 'higher_levels' field?`,
+                source: spell
+            });
+        }
+    }
+    return results;
 }
