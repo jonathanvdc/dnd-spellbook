@@ -93,11 +93,12 @@ function higherLevelsNotInDescription(spell: Spell): Diagnostic<Spell>[] {
         }
     }
     let lowerDesc = spell.description.toLowerCase();
-    for (let term of ["at higher levels", "higher-level slot"]) {
-        if (lowerDesc.includes(term)) {
+    for (let term of [/at higher levels/, /higher-level slot/, /when you reach \S* level/]) {
+        let search = term.exec(lowerDesc);
+        if (search && search.length > 0) {
             results.push({
                 severity: "warning",
-                message: `spell mentions '${term}' in its description. Should this be part of the 'higher_levels' field?`,
+                message: `spell mentions '${search[0]}' in its description. Should this be part of the 'higher_levels' field?`,
                 source: spell
             });
         }
