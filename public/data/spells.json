@@ -2,7 +2,7 @@
     {
         "school": "evocation", 
         "description": "A flurry of magic snowballs erupts from a point you choose within range. Each creature in a 5-foot-radius sphere centered on that point must make a Dexterity saving throw. A creature takes 3d6 cold damage on a failed save, or half as much damage on a successful one.", 
-        "higher_levels": "When you cast this spell using a spell slot of 3rd level or higher, the damage increases by 1d6 for each slot level above 2nd.",
+        "higher_levels": "When you cast this spell using a spell slot of 3rd level or higher, the damage increases by 1d6 for each slot level above 2nd.", 
         "level": "2", 
         "ritual": false, 
         "thumbnail_source": [
@@ -741,6 +741,18 @@
         }, 
         "duration": "Concentration, up to 10 minutes", 
         "thumbnail_url": "images/spells/detect-magic.svg", 
+        "thumbnail_source": [
+            {
+                "author": "Jonathan Van der Cruysse", 
+                "license": "CC-BY-3.0"
+            }, 
+            {
+                "url": "https://opengameart.org/content/painterly-spell-icons-part-1", 
+                "author": "J. W. Bjerk", 
+                "license": "CC-BY-3.0", 
+                "title": "Evil Eye"
+            }
+        ], 
         "name": "Detect Magic"
     }, 
     {
@@ -2169,6 +2181,12 @@
         }, 
         "duration": "10 minutes", 
         "thumbnail_url": "images/spells/produce-flame.svg", 
+        "thumbnail_source": [
+            {
+                "author": "Jonathan Van der Cruysse", 
+                "license": "GPL-3.0-or-later"
+            }
+        ], 
         "higher_levels": "This spell's damage increases by 1d8 when you reach 5th level (2d8), 11th level (3d8), and 17th level (4d8).", 
         "name": "Produce Flame"
     }, 
@@ -2199,6 +2217,18 @@
         }, 
         "duration": "Concentration, up to 10 minutes", 
         "thumbnail_url": "images/spells/protection-from-evil-and-good.svg", 
+        "thumbnail_source": [
+            {
+                "author": "Jonathan Van der Cruysse", 
+                "license": "CC-BY-3.0"
+            }, 
+            {
+                "url": "https://opengameart.org/content/painterly-spell-icons-part-1", 
+                "author": "J. W. Bjerk", 
+                "license": "CC-BY-3.0", 
+                "title": "Protect"
+            }
+        ], 
         "name": "Protection from Evil and Good"
     }, 
     {
@@ -2436,6 +2466,18 @@
         }, 
         "duration": "1 minute", 
         "thumbnail_url": "images/spells/sanctuary.svg", 
+        "thumbnail_source": [
+            {
+                "author": "Jonathan Van der Cruysse", 
+                "license": "CC-BY-3.0"
+            }, 
+            {
+                "url": "https://opengameart.org/content/painterly-spell-icons-part-1", 
+                "author": "J. W. Bjerk", 
+                "license": "CC-BY-3.0", 
+                "title": "Protect"
+            }
+        ], 
         "name": "Sanctuary"
     }, 
     {
@@ -2988,6 +3030,15 @@
         }, 
         "duration": "Instantaneous", 
         "thumbnail_url": "images/spells/vicious-mockery.svg", 
+        "thumbnail_source": [
+            {
+                "url": "https://game-icons.net/1x1/delapouite/hand-ok.html", 
+                "author": "Delapouite", 
+                "author_website": "http://delapouite.com", 
+                "license": "CC-BY-3.0", 
+                "title": "Hand OK"
+            }
+        ], 
         "higher_levels": "This spell's damage increases by 1d4 when you reach 5th level (2d4), 11th level (3d4), and 17th level (4d4).", 
         "name": "Vicious Mockery"
     }, 
@@ -4520,6 +4571,15 @@
         }, 
         "duration": "Concentration, up to 1 minute", 
         "thumbnail_url": "images/spells/hypnotic-pattern.svg", 
+        "thumbnail_source": [
+            {
+                "url": "https://game-icons.net/1x1/delapouite/spiral-lollipop.html", 
+                "author": "Delapouite", 
+                "author_website": "http://delapouite.com", 
+                "license": "CC-BY-3.0", 
+                "title": "Spiral Lollipop"
+            }
+        ], 
         "name": "Hypnotic Pattern"
     }, 
     {
@@ -6333,6 +6393,15 @@
         }, 
         "duration": "Concentration, up to 10 minutes", 
         "thumbnail_url": "images/spells/maze.svg", 
+        "thumbnail_source": [
+            {
+                "url": "https://game-icons.net/1x1/lorc/maze.html", 
+                "author": "Lorc", 
+                "author_website": "http://lorcblog.blogspot.com", 
+                "license": "CC-BY-3.0", 
+                "title": "Maze"
+            }
+        ], 
         "name": "Maze"
     }, 
     {
@@ -7053,6 +7122,15 @@
         }, 
         "duration": "Up to 8 hours", 
         "thumbnail_url": "images/spells/etherealness.svg", 
+        "thumbnail_source": [
+            {
+                "url": "https://game-icons.net/1x1/delapouite/fog.html", 
+                "author": "Delapouite", 
+                "author_website": "http://delapouite.com", 
+                "license": "CC-BY-3.0", 
+                "title": "Fog"
+            }
+        ], 
         "name": "Etherealness"
     }, 
     {
@@ -7079,6 +7157,15 @@
         }, 
         "duration": "Instantaneous", 
         "thumbnail_url": "images/spells/finger-of-death.svg", 
+        "thumbnail_source": [
+            {
+                "url": "https://game-icons.net/1x1/lorc/smoking-finger.html", 
+                "author": "Lorc", 
+                "author_website": "http://lorcblog.blogspot.com", 
+                "license": "CC-BY-3.0", 
+                "title": "Smoking finger"
+            }
+        ], 
         "name": "Finger of Death"
     }, 
     {
@@ -7133,6 +7220,15 @@
         }, 
         "duration": "1 hour", 
         "thumbnail_url": "images/spells/forcecage.svg", 
+        "thumbnail_source": [
+            {
+                "url": "https://game-icons.net/1x1/lorc/caged-ball.html",
+                "author": "Lorc",
+                "author_website": "http://lorcblog.blogspot.com",
+                "license": "CC-BY-3.0",
+                "title": "Caged bowl"
+            }
+        ],
         "name": "Forcecage"
     }, 
     {
@@ -7159,6 +7255,15 @@
         }, 
         "duration": "10 days", 
         "thumbnail_url": "images/spells/mirage-arcane.svg", 
+        "thumbnail_source": [
+            {
+                "url": "https://game-icons.net/1x1/lorc/heat-haze.html", 
+                "author": "Lorc", 
+                "author_website": "http://lorcblog.blogspot.com", 
+                "license": "CC-BY-3.0", 
+                "title": "Heat haze"
+            }
+        ], 
         "name": "Mirage Arcane"
     }, 
     {
@@ -7360,6 +7465,15 @@
         }, 
         "duration": "Concentration, up to 1 minute", 
         "thumbnail_url": "images/spells/reverse-gravity.svg", 
+        "thumbnail_source": [
+            {
+                "url": "https://game-icons.net/1x1/sbed/fall-down.html",
+                "author": "Sbed",
+                "author_website": "http://opengameart.org/content/95-game-icons",
+                "license": "CC-BY-3.0",
+                "title": "Fall Down"
+            }
+        ],
         "name": "Reverse Gravity"
     }, 
     {
@@ -11242,7 +11356,16 @@
             "somatic": true
         }, 
         "duration": "Instantaneous", 
-        "thumbnail_url": "images/spells/stone-shape.svg", 
+        "thumbnail_url": "images/spells/stone-shape.svg",
+        "thumbnail_source": [
+            {
+                "url": "https://game-icons.net/1x1/delapouite/asteroid.html",
+                "author": "Delapouite",
+                "author_website": "http://delapouite.com",
+                "license": "CC-BY-3.0",
+                "title": "Asteroid"
+            }
+        ],
         "name": "Stone Shape"
     }, 
     {
@@ -11629,6 +11752,15 @@
         }, 
         "duration": "Concentration, up to 10 minutes", 
         "thumbnail_url": "images/spells/wall-of-ice.svg", 
+        "thumbnail_source": [
+            {
+                "url": "https://game-icons.net/1x1/delapouite/stalactites.html", 
+                "author": "Delapouite", 
+                "author_website": "http://delapouite.com", 
+                "license": "CC-BY-3.0", 
+                "title": "Stalactites"
+            }
+        ], 
         "higher_levels": "When you cast this spell using a spell slot of 7th level or higher, the damage the wall deals when it appears increases by 2d6, and the damage from passing through the sheet of frigid air increases by 1d6, for each slot level above 6th.", 
         "name": "Wall of Ice"
     }, 
@@ -11729,6 +11861,15 @@
         }, 
         "duration": "Concentration, up to 10 minutes", 
         "thumbnail_url": "images/spells/wall-of-thorns.svg", 
+        "thumbnail_source": [
+            {
+                "url": "https://game-icons.net/1x1/lorc/curling-vines.html",
+                "author": "Lorc",
+                "author_website": "http://lorcblog.blogspot.com",
+                "license": "CC-BY-3.0",
+                "title": "Curling Vines"
+            }
+        ],
         "name": "Wall of Thorns"
     }, 
     {
@@ -12092,7 +12233,7 @@
     {
         "school": "evocation", 
         "description": "You create a burst of thunderous sound, which can be heard 100 feet away. Each creature other than you within 5 feet of you must make a Constitution saving throw. On a failed save, the creature takes 1d6 thunder damage.", 
-        "higher_levels": "The spell's damage increases by 1d6 when you reach 5th level (2d6), 11th level (3d6), and 17th level (4d6).",
+        "higher_levels": "The spell's damage increases by 1d6 when you reach 5th level (2d6), 11th level (3d6), and 17th level (4d6).", 
         "level": "cantrip", 
         "ritual": false, 
         "thumbnail_source": [
@@ -12190,7 +12331,7 @@
     {
         "school": "conjuration", 
         "description": "You create a bonfire on ground that you can see within range. Until the spell ends, the bonfire fills a 5-foot cube. Any creature in the bonfire\u2019s space when you cast the spell must succeed on a Dexterity saving throw or take 1d8 fire damage. A creature must also make the saving throw when it enters the bonfire\u2019s space for the first time on a turn or ends its turn there.", 
-        "higher_levels": "The spell's damage increases by 1d8 when you reach 5th level (2d8), 11th level (3d8), and 17th level (4d8).",
+        "higher_levels": "The spell's damage increases by 1d8 when you reach 5th level (2d8), 11th level (3d8), and 17th level (4d8).", 
         "level": "cantrip", 
         "ritual": false, 
         "thumbnail_source": [
@@ -12227,7 +12368,7 @@
     {
         "school": "evocation", 
         "description": "You cause numbing frost to form on one creature that you can see within range. The target must make a Constitution saving throw. On a failed save, the target takes 1d6 cold damage, and it has disadvantage on the next weapon attack roll it makes before the end of its next turn.", 
-        "higher_levels": "The spell's damage increases by 1d6 when you reach 5th level (2d6), 11th level (3d6), and 17th level (4d6).",
+        "higher_levels": "The spell's damage increases by 1d6 when you reach 5th level (2d6), 11th level (3d6), and 17th level (4d6).", 
         "level": "cantrip", 
         "ritual": false, 
         "thumbnail_source": [
@@ -14181,7 +14322,7 @@
     {
         "school": "conjuration", 
         "description": "You cause a cloud of mites, fleas, and other parasites to appear momentarily on one creature you can see within range. The target must succeed on a Constitution saving throw, or it takes 1d6 poison damage and moves 5 feet in a random direction if it can move and its speed is at least 5 feet. Roll a d4 for the direction: 1., north; 2, south; 3, east; or 4, west. This movement doesn't provoke opportunity attacks, and if the direction rolled is blocked, the target doesn't move.", 
-        "higher_levels": "The spell's damage increases by 1d6 when you reach 5th level (2d6), 11th level (3d6), and 17th level (4d6).",
+        "higher_levels": "The spell's damage increases by 1d6 when you reach 5th level (2d6), 11th level (3d6), and 17th level (4d6).", 
         "level": "cantrip", 
         "ritual": false, 
         "casting_time": "1 action", 
@@ -14352,6 +14493,12 @@
         }, 
         "duration": "Instantaneous", 
         "thumbnail_url": "images/spells/lightning-lure.svg", 
+        "thumbnail_source": [
+            {
+                "author": "Jonathan Van der Cruysse", 
+                "license": "GPL-3.0-or-later"
+            }
+        ], 
         "higher_levels": "This spell's damage increases by 1d8 when you reach 5th level (2d8), 11th level (3d8), and 17th level (4d8).", 
         "name": "Lightning Lure"
     }, 
@@ -14463,7 +14610,7 @@
     {
         "school": "evocation", 
         "description": "You create six tiny meteors in your space. They float in the air and orbit you for the spell's duration. When you cast the spell\u2014and as a bonus action on each of your turns thereafter\u2014you can expend one or two of the meteors, sending them streaking toward a point or points you choose within 120 feet of you. Once a meteor reaches its destination or impacts against a solid surface, the meteor explodes. Each creature within 5 feet of the point where the meteor explodes must make a Dexterity saving throw. A creature takes 2d6 fire damage on a failed save, or half as much damage on a successful one.", 
-        "higher_levels": "When you cast this spell using a spell slot of 4th level or higher, the number of meteors created increases by two for each slot level above 3rd.",
+        "higher_levels": "When you cast this spell using a spell slot of 4th level or higher, the number of meteors created increases by two for each slot level above 3rd.", 
         "level": "3", 
         "ritual": false, 
         "casting_time": "1 action", 
@@ -14485,7 +14632,17 @@
             "somatic": true
         }, 
         "duration": "Concentration, up to 10 minutes", 
-        "name": "Melf's Minute Meteors"
+        "name": "Melf's Minute Meteors", 
+        "thumbnail_url": "images/spells/melfs-minute-meteors.svg", 
+        "thumbnail_source": [
+            {
+                "url": "https://game-icons.net/1x1/lorc/thrown-charcoal.html", 
+                "author": "Lorc", 
+                "author_website": "http://lorcblog.blogspot.com", 
+                "license": "CC-BY-3.0", 
+                "title": "Thrown Charcoal"
+            }
+        ]
     }, 
     {
         "school": "illusion", 
@@ -14840,7 +14997,7 @@
     {
         "school": "transmutation", 
         "description": "You channel primal magic to cause your teeth or fingernails to sharpen, ready to deliver a corrosive attack. Make a melee spell attack against one creature within 5 feet of you. On a hit, the target takes 1d10 acid damage. After you make the attack, your teeth or fingernails return to normal.", 
-        "higher_levels": "The spell's damage increases by 1d10 when you reach 5th level (2d10), 11th level (3d10), and 17th level (4d10).",
+        "higher_levels": "The spell's damage increases by 1d10 when you reach 5th level (2d10), 11th level (3d10), and 17th level (4d10).", 
         "level": "cantrip", 
         "ritual": false, 
         "thumbnail_source": [
@@ -15245,6 +15402,19 @@
         }, 
         "duration": "Instantaneous", 
         "thumbnail_url": "images/spells/sword-burst.svg", 
+        "thumbnail_source": [
+            {
+                "author": "Jonathan Van der Cruysse", 
+                "license": "CC-BY-3.0"
+            }, 
+            {
+                "url": "https://game-icons.net/1x1/lorc/knife-thrust.html", 
+                "author": "Lorc", 
+                "author_website": "http://lorcblog.blogspot.com", 
+                "license": "CC-BY-3.0", 
+                "title": "Knife Thrust"
+            }
+        ], 
         "higher_levels": "This spell's damage increases by 1d6 when you reach 5th level (2d6), 11th level (3d6), and 17th level (4d6).", 
         "name": "Sword Burst"
     }, 
@@ -15448,7 +15618,7 @@
     {
         "school": "necromancy", 
         "description": "You point at one creature you can see within range, and the sound of a dolorous bell fills the air around it for a moment. The target must succeed on a Wisdom saving throw or take 1d8 necrotic damage. If the target is missing any of its hit points, it instead takes 1d12 necrotic damage.", 
-        "higher_levels": "The spell's damage increases by one die when you reach 5th level (2d8 or 2d12), 11th level (3d8 or 3d12), and 17th level (4d8 or 4d12).",
+        "higher_levels": "The spell's damage increases by one die when you reach 5th level (2d8 or 2d12), 11th level (3d8 or 3d12), and 17th level (4d8 or 4d12).", 
         "level": "cantrip", 
         "ritual": false, 
         "thumbnail_source": [
@@ -15512,7 +15682,7 @@
     {
         "school": "evocation", 
         "description": "You utter a divine word, and burning radiance erupts from you. Each creature of your choice that you can see within range must succeed on a Constitution saving throw or take 1d6 radiant damage.", 
-        "higher_levels": "The spell's damage increases by 1d6 when you reach 5th level (2d6), 11th level (3d6), and 17th level (4d6).",
+        "higher_levels": "The spell's damage increases by 1d6 when you reach 5th level (2d6), 11th level (3d6), and 17th level (4d6).", 
         "level": "cantrip", 
         "ritual": false, 
         "casting_time": "1 action", 
