@@ -1,15 +1,12 @@
 import React, { Component, lazy, Suspense } from 'react';
-import { Route, HashRouter, Link } from 'react-router-dom';
+import { Route, HashRouter } from 'react-router-dom';
 import './App.css';
 import { Spell, getSpellId } from './model/spell';
 import SpellCard from './SpellCard';
 import FilterableSpellbook from './FilterableSpellbook';
-import { History } from 'history';
-import { AppBar, Toolbar, Typography } from '@material-ui/core';
-import SpellSearchBox from './SpellSearchBox';
 import { createMuiTheme, MuiThemeProvider } from '@material-ui/core/styles';
 import pink from '@material-ui/core/colors/pink';
-import { isMobile } from 'react-device-detect';
+import SpellbookAppBar from './SpellbookAppBar';
 
 const LinterResults = lazy(() => import('./LinterResults'));
 
@@ -22,19 +19,12 @@ const theme = createMuiTheme({
   },
 });
 
-class App extends Component<{}, { allSpells: Spell[], isSearching: boolean }> {
+class App extends Component<{}, { allSpells: Spell[] }> {
   constructor(props: {}) {
     super(props);
     this.state = {
-      allSpells: [],
-      isSearching: false
+      allSpells: []
     };
-  }
-
-  toggleSearching(isSearching: boolean) {
-    if (this.state.isSearching !== isSearching) {
-      this.setState({ isSearching });
-    }
   }
 
   componentDidMount() {
@@ -49,43 +39,20 @@ class App extends Component<{}, { allSpells: Spell[], isSearching: boolean }> {
   }
 
   render() {
-    let sepClassName = "AppBarSeparator";
-    let searchClassName = "AppBarSearchBox";
-    if (this.state.isSearching) {
-      sepClassName += "-searching";
-      searchClassName += "-searching";
-    }
     return <HashRouter>
         <div className="App">
           <MuiThemeProvider theme={theme}>
-            <AppBar position="static">
-              <Toolbar variant={isMobile ? "regular" : "dense"}>
-                <Link to="/" className="AppTitle"><Typography variant="h6">Spellbook</Typography></Link>
-                <span className={sepClassName} />
-                <div className={searchClassName}>
-                  <SpellSearchBox
-                    spells={this.state.allSpells}
-                    onFocus={() => this.toggleSearching(true)}
-                    onBlur={() => this.toggleSearching(false)} />
-                </div>
-              </Toolbar>
-            </AppBar>
+            <SpellbookAppBar spells={this.state.allSpells} />
+            <div className="App-body">
+              <Suspense fallback={<div>Loading...</div>}>
+                <Route exact={true} path="/" render={routeProps => <FilterableSpellbook key="spellbook" spells={this.state.allSpells}/>} />
+                <Route path="/spell/:spellId" render={routeProps => <SpellRoute {...routeProps} allSpells={this.state.allSpells}/>} />
+                <Route path="/linter" render={routeProps => <LinterRoute {...routeProps} allSpells={this.state.allSpells}/>} />
+              </Suspense>
+            </div>
           </MuiThemeProvider>
-          <div className="App-body">
-            <Suspense fallback={<div>Loading...</div>}>
-              <Route exact={true} path="/" render={routeProps => <MainScreenRouter {...routeProps} allSpells={this.state.allSpells}/>} />
-              <Route path="/spell/:spellId" render={routeProps => <SpellRoute {...routeProps} allSpells={this.state.allSpells}/>} />
-              <Route path="/linter" render={routeProps => <LinterRoute {...routeProps} allSpells={this.state.allSpells}/>} />
-            </Suspense>
-          </div>
         </div>
       </HashRouter>;
-  }
-}
-
-class MainScreenRouter extends Component<{ match: any, history: History, allSpells: Spell[] }> {
-  render() {
-    return <FilterableSpellbook key="spellbook" spells={this.props.allSpells}/>;
   }
 }
 

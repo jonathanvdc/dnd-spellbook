@@ -1,0 +1,27 @@
+.AppTitle, .AppTitle:hover {
+    text-decoration: none;
+    color: white;
+    outline: none;
+}
+
+.AppBarSeparator {
+    min-width: 1em;
+    flex-grow: 1;
+    transition: flex-grow 0.2s;
+}
+
+.AppBarSeparator-searching {
+    width: 1em;
+    flex-grow: 0;
+    transition: flex-grow 0.2s;
+}
+
+.AppBarSearchBox {
+    flex-grow: 0;
+    transition: flex-grow 0.2s;
+}
+
+.AppBarSearchBox-searching {
+    flex-grow: 1;
+    transition: flex-grow 0.2s;
+}

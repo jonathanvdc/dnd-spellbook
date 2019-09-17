@@ -5,6 +5,7 @@ import "./Spellbook.css";
 import "./hr.css";
 import SpellLink, { SpellLinkPlaceholder } from "./SpellLink";
 import LazyLoad from "react-lazyload";
+import { Typography } from "@material-ui/core";
 
 /**
  * A component that displays a sequence of spells.
@@ -15,7 +16,7 @@ class Spellbook extends PureComponent<{ spells: Spell[] }> {
         let elems = [];
         for (let { level, spells: levelSpells } of spellsByLevel(this.props.spells)) {
             let levelName = level === "cantrip" ? "Cantrips" : `Level ${level} spells`;
-            elems.push(<div className="LevelHeader">{levelName}</div>);
+            elems.push(<Typography variant="h6" className="LevelHeader">{levelName}</Typography>);
 
             let spellListItems: JSX.Element[] = [];
             for (let { school, spells } of spellsBySchool(levelSpells)) {

@@ -13,6 +13,7 @@
     border: none;
     color: white;
     background-color: rgba(255, 255, 255, 0.2);
+    background-image: radial-gradient(at 10% 30%, #82c4f220, #5e27df20);
     border-radius: 4px;
     transition: background-color 0.2s;
 }
@@ -37,7 +38,7 @@
 .react-autosuggest__container--open .react-autosuggest__suggestions-container {
     display: block;
     position: absolute;
-    top: 51px;
+    top: 35px;
     border: 1px solid #aaa;
     background-color: #fff;
     font-family: Helvetica, sans-serif;

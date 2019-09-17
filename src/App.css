@@ -34,48 +34,6 @@ body {
   background: #f8f5eb;
 }
 
-.AppTitle, .AppTitle:hover {
-  text-decoration: none;
-  color: white;
-  outline: none;
-}
-
-.AppBarSeparator {
-  min-width: 1em;
-  flex-grow: 1;
-  transition: flex-grow 0.2s;
-}
-
-.AppBarSeparator-searching {
-  width: 1em;
-  flex-grow: 0;
-  transition: flex-grow 0.2s;
-}
-
-.AppBarSearchBox {
-  flex-grow: 0;
-  transition: flex-grow 0.2s;
-}
-
-.AppBarSearchBox-searching {
-  flex-grow: 1;
-  transition: flex-grow 0.2s;
-}
-
-.AppBar {
-  display: grid;
-  grid-template-columns: auto min-content;
-  margin: 5pt 5pt 0;
-}
-
-.AppBar-searching {
-  grid-template-columns: auto;
-}
-
-.AppBar-searching .AppTitle {
-  display: none;
-}
-
 .SearchItemName {
   color: black;
   font-size: large;
