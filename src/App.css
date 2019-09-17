@@ -12,7 +12,7 @@ body {
   background-color: #282c34;
 }
 
-.App-header {
+.App-body {
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
@@ -34,8 +34,32 @@ body {
   background: #f8f5eb;
 }
 
-.AppTitle {
-  font-family: 'Ruthie', cursive;
+.AppTitle, .AppTitle:hover {
+  text-decoration: none;
+  color: white;
+  outline: none;
+}
+
+.AppBarSeparator {
+  min-width: 1em;
+  flex-grow: 1;
+  transition: flex-grow 0.2s;
+}
+
+.AppBarSeparator-searching {
+  width: 1em;
+  flex-grow: 0;
+  transition: flex-grow 0.2s;
+}
+
+.AppBarSearchBox {
+  flex-grow: 0;
+  transition: flex-grow 0.2s;
+}
+
+.AppBarSearchBox-searching {
+  flex-grow: 1;
+  transition: flex-grow 0.2s;
 }
 
 .AppBar {
