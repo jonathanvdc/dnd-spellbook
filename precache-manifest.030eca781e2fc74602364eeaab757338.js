@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "1d3a9d9b99c42aa5887dec5d74b724e5",
+    "revision": "61b71a84f4fcad27b3b82c3c10604eb9",
     "url": "/dnd-spellbook/index.html"
   },
   {
