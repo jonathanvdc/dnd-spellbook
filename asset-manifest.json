@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/dnd-spellbook/static/css/main.3568610c.chunk.css",
+    "main.css": "/dnd-spellbook/static/css/main.23d86d79.chunk.css",
     "main.js": "/dnd-spellbook/static/js/main.9e3fccbf.chunk.js",
     "main.js.map": "/dnd-spellbook/static/js/main.9e3fccbf.chunk.js.map",
     "runtime~main.js": "/dnd-spellbook/static/js/runtime~main.0e43c91c.js",
@@ -11,9 +11,9 @@
     "static/js/3.d5860bb5.chunk.js": "/dnd-spellbook/static/js/3.d5860bb5.chunk.js",
     "static/js/3.d5860bb5.chunk.js.map": "/dnd-spellbook/static/js/3.d5860bb5.chunk.js.map",
     "index.html": "/dnd-spellbook/index.html",
-    "precache-manifest.c2c7dbde5a26a188a24e40513d0c3665.js": "/dnd-spellbook/precache-manifest.c2c7dbde5a26a188a24e40513d0c3665.js",
+    "precache-manifest.d49bc9637c7dc701b3bdb9f767237ce8.js": "/dnd-spellbook/precache-manifest.d49bc9637c7dc701b3bdb9f767237ce8.js",
     "service-worker.js": "/dnd-spellbook/service-worker.js",
     "static/css/3.e17c4c79.chunk.css.map": "/dnd-spellbook/static/css/3.e17c4c79.chunk.css.map",
-    "static/css/main.3568610c.chunk.css.map": "/dnd-spellbook/static/css/main.3568610c.chunk.css.map"
+    "static/css/main.23d86d79.chunk.css.map": "/dnd-spellbook/static/css/main.23d86d79.chunk.css.map"
   }
 }
