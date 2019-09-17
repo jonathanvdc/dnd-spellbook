@@ -9,12 +9,12 @@ import { History } from 'history';
 import SpellThumbnail from './SpellThumbnail';
 const LinterResults = lazy(() => import('./LinterResults'))
 
-let allSpells: Spell[] = [];
-
-class App extends Component<{}, Spell[]> {
+class App extends Component<{}, { allSpells: Spell[] }> {
   constructor(props: {}) {
     super(props);
-    this.state = allSpells;
+    this.state = {
+      allSpells: []
+    };
   }
 
   componentDidMount() {
@@ -22,8 +22,9 @@ class App extends Component<{}, Spell[]> {
     fetch("data/spells.json")
     .then(response => response.json())
     .then(json => {
-      allSpells = json;
-      this.setState(json);
+      this.setState({
+        allSpells: json
+      });
     });
   }
 
@@ -33,9 +34,9 @@ class App extends Component<{}, Spell[]> {
         <div className="App">
           <header className="App-header">
             <Suspense fallback={<div>Loading...</div>}>
-              <Route exact={true} path="/" component={MainScreenRouter} />
-              <Route path="/spell/:spellId" component={SpellRoute} />
-              <Route path="/linter" component={LinterRoute} />
+              <Route exact={true} path="/" render={routeProps => <MainScreenRouter {...routeProps} allSpells={this.state.allSpells}/>} />
+              <Route path="/spell/:spellId" render={routeProps => <SpellRoute {...routeProps} allSpells={this.state.allSpells}/>} />
+              <Route path="/linter" render={routeProps => <LinterRoute {...routeProps} allSpells={this.state.allSpells}/>} />
             </Suspense>
           </header>
         </div>
@@ -50,8 +51,8 @@ type SearchItem = {
   spell: Spell;
 };
 
-class MainScreenRouter extends Component<{ match: any, history: History }, { isSearching: boolean }> {
-  constructor(props: { match: any, history: History }) {
+class MainScreenRouter extends Component<{ match: any, history: History, allSpells: Spell[] }, { isSearching: boolean }> {
+  constructor(props: { match: any, history: History, allSpells: Spell[] }) {
     super(props);
 
     this.state = {
@@ -75,7 +76,7 @@ class MainScreenRouter extends Component<{ match: any, history: History }, { isS
 
   render() {
     let searchData: SearchItem[] = [];
-    for (let spell of allSpells) {
+    for (let spell of this.props.allSpells) {
       searchData.push({
         key: spell.name,
         value: <div className="SearchItem">
@@ -96,19 +97,19 @@ class MainScreenRouter extends Component<{ match: any, history: History }, { isS
     return <div>
       <div key="appBar" className={this.state.isSearching ? "AppBar AppBar-searching" : "AppBar"}>
         <h1 className="AppTitle">Spellbook</h1>
-        {allSpells.length > 0 ? searchBox : []}
+        {this.props.allSpells.length > 0 ? searchBox : []}
       </div>
-      <FilterableSpellbook key="spellbook" spells={allSpells}/>
+      <FilterableSpellbook key="spellbook" spells={this.props.allSpells}/>
     </div>;
   }
 }
 
-class SpellRoute extends Component<{ match: any }, any> {
+class SpellRoute extends Component<{ match: any, allSpells: Spell[] }, any> {
   render() {
-    if (allSpells.length === 0) {
+    if (this.props.allSpells.length === 0) {
       return <div></div>;
     }
-    let spell = allSpells.find(val => getSpellId(val) === this.props.match.params.spellId);
+    let spell = this.props.allSpells.find(val => getSpellId(val) === this.props.match.params.spellId);
     if (spell) {
       return <div className="SpellCardBox"><SpellCard spell={spell} /></div>;
     } else {
@@ -124,12 +125,12 @@ class SpellRoute extends Component<{ match: any }, any> {
   }
 }
 
-class LinterRoute extends Component<{ match: any }, any> {
+class LinterRoute extends Component<{ match: any, allSpells: Spell[] }, any> {
   render() {
-    if (allSpells.length === 0) {
+    if (this.props.allSpells.length === 0) {
       return <div></div>;
     }
-    return <LinterResults spells={allSpells} />;
+    return <LinterResults spells={this.props.allSpells} />;
   }
 }
 
