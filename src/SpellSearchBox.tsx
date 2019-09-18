@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { PureComponent } from "react";
 import { Spell, getSpellType, getSpellId } from "./model/spell";
 import SpellThumbnail from "./SpellThumbnail";
 import Autosuggest, { SuggestionsFetchRequestedParams, ChangeEvent, RenderSuggestionParams, SuggestionSelectedEventData, BlurEvent } from "react-autosuggest";
@@ -13,7 +13,7 @@ type Props = RouteComponentProps<any> & {
     onBlur?: (event: React.FocusEvent<any>, params?: BlurEvent<Spell>) => void;
 }
 
-class SpellSearchBox extends Component<Props, { query: string, suggestions: Spell[] }> {
+class SpellSearchBox extends PureComponent<Props, { query: string, suggestions: Spell[] }> {
     constructor(props: Props) {
         super(props);
 
@@ -29,18 +29,7 @@ class SpellSearchBox extends Component<Props, { query: string, suggestions: Spel
         });
     }
 
-    onSuggestionsFetchRequested(request: SuggestionsFetchRequestedParams): void {
-        let options = {
-            shouldSort: true,
-            threshold: 0.6,
-            location: 0,
-            distance: 100,
-            maxPatternLength: request.value.length,
-            minMatchCharLength: 1,
-            keys: ["name"]
-        };
-
-        let fuse = new Fuse(this.props.spells, options);
+    onSuggestionsFetchRequested(request: SuggestionsFetchRequestedParams, fuse: Fuse<Spell>): void {
         this.setState({
             suggestions: fuse.search(request.value).slice(0, 10)
         });
@@ -72,6 +61,18 @@ class SpellSearchBox extends Component<Props, { query: string, suggestions: Spel
             return [];
         }
 
+        const options = {
+            shouldSort: true,
+            threshold: 0.6,
+            location: 0,
+            distance: 100,
+            maxPatternLength: 32,
+            minMatchCharLength: 1,
+            keys: ["name"]
+        };
+
+        const fuse = new Fuse(this.props.spells, options);
+
         const inputProps = {
             placeholder: "Search spells...",
             value: this.state.query,
@@ -81,7 +82,7 @@ class SpellSearchBox extends Component<Props, { query: string, suggestions: Spel
         };
         return <Autosuggest
             suggestions={this.state.suggestions}
-            onSuggestionsFetchRequested={this.onSuggestionsFetchRequested.bind(this)}
+            onSuggestionsFetchRequested={request => this.onSuggestionsFetchRequested(request, fuse)}
             onSuggestionsClearRequested={this.onSuggestionsClearRequested.bind(this)}
             onSuggestionSelected={this.onSuggestionSelected.bind(this)}
             inputProps={inputProps}
