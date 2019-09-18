@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "365fb60b4d9306109ffc11832a9bc138",
+    "revision": "9e3ef800e226741b69b6c955bee64515",
     "url": "/dnd-spellbook/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/dnd-spellbook/static/css/3.e17c4c79.chunk.css"
   },
   {
-    "revision": "fdeb5a4c3c53fffa998c",
+    "revision": "38048b2d33ebf9e87b67",
     "url": "/dnd-spellbook/static/css/main.f9d0b402.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/dnd-spellbook/static/js/3.d5860bb5.chunk.js"
   },
   {
-    "revision": "fdeb5a4c3c53fffa998c",
-    "url": "/dnd-spellbook/static/js/main.006acf17.chunk.js"
+    "revision": "38048b2d33ebf9e87b67",
+    "url": "/dnd-spellbook/static/js/main.f43040bf.chunk.js"
   },
   {
     "revision": "b86b7435833f8a99d144",
