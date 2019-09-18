@@ -2,26 +2,41 @@
     text-decoration: none;
     color: white;
     outline: none;
+    flex-basis: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: clip;
+}
+
+.AppTitle-notsearching {
+    min-width: min-content;
+}
+
+.AppTitle-searching {
+    min-width: 0;
 }
 
 .AppBarSeparator {
+    transition: flex-grow 0.2s;
+}
+
+.AppBarSeparator-notsearching {
     min-width: 1em;
     flex-grow: 1;
-    transition: flex-grow 0.2s;
 }
 
 .AppBarSeparator-searching {
-    width: 1em;
     flex-grow: 0;
-    transition: flex-grow 0.2s;
 }
 
 .AppBarSearchBox {
-    flex-grow: 0;
     transition: flex-grow 0.2s;
+}
+
+.AppBarSearchBox-notsearching {
+    flex-grow: 0;
 }
 
 .AppBarSearchBox-searching {
     flex-grow: 1;
-    transition: flex-grow 0.2s;
 }

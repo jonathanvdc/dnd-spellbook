@@ -21,18 +21,17 @@ class SpellbookAppBar extends Component<{ spells: Spell[] }, { isSearching: bool
         }
     }
 
+    createClasses(baseName: string): string {
+        let suffix = this.state.isSearching ? "searching" : "notsearching";
+        return `${baseName} ${baseName}-${suffix}`;
+    }
+
     render() {
-        let sepClassName = "AppBarSeparator";
-        let searchClassName = "AppBarSearchBox";
-        if (this.state.isSearching) {
-            sepClassName += "-searching";
-            searchClassName += "-searching";
-        }
         return <AppBar position="sticky">
                 <Toolbar variant={isMobile ? "regular" : "dense"}>
-                    <Link to="/" className="AppTitle"><Typography variant="h6">Spellbook</Typography></Link>
-                    <span className={sepClassName} />
-                    <div className={searchClassName}>
+                    <Link to="/" className={this.createClasses("AppTitle")}><Typography variant="h6">Spellbook</Typography></Link>
+                    <span className={this.createClasses("AppBarSeparator")} />
+                    <div className={this.createClasses("AppBarSearchBox")}>
                     <SpellSearchBox
                         spells={this.props.spells}
                         onFocus={() => this.toggleSearching(true)}
