@@ -1,19 +1,20 @@
 {
   "files": {
-    "main.css": "/dnd-spellbook/static/css/main.f9d0b402.chunk.css",
-    "main.js": "/dnd-spellbook/static/js/main.f43040bf.chunk.js",
-    "main.js.map": "/dnd-spellbook/static/js/main.f43040bf.chunk.js.map",
-    "runtime~main.js": "/dnd-spellbook/static/js/runtime~main.0e43c91c.js",
-    "runtime~main.js.map": "/dnd-spellbook/static/js/runtime~main.0e43c91c.js.map",
-    "static/js/2.8720d304.chunk.js": "/dnd-spellbook/static/js/2.8720d304.chunk.js",
-    "static/js/2.8720d304.chunk.js.map": "/dnd-spellbook/static/js/2.8720d304.chunk.js.map",
+    "main.css": "/dnd-spellbook/static/css/main.63663d9e.chunk.css",
+    "main.js": "/dnd-spellbook/static/js/main.7c67bfe4.chunk.js",
+    "main.js.map": "/dnd-spellbook/static/js/main.7c67bfe4.chunk.js.map",
+    "runtime~main.js": "/dnd-spellbook/static/js/runtime~main.1f5aedbb.js",
+    "runtime~main.js.map": "/dnd-spellbook/static/js/runtime~main.1f5aedbb.js.map",
+    "static/js/2.ddc06505.chunk.js": "/dnd-spellbook/static/js/2.ddc06505.chunk.js",
+    "static/js/2.ddc06505.chunk.js.map": "/dnd-spellbook/static/js/2.ddc06505.chunk.js.map",
     "static/css/3.e17c4c79.chunk.css": "/dnd-spellbook/static/css/3.e17c4c79.chunk.css",
-    "static/js/3.d5860bb5.chunk.js": "/dnd-spellbook/static/js/3.d5860bb5.chunk.js",
-    "static/js/3.d5860bb5.chunk.js.map": "/dnd-spellbook/static/js/3.d5860bb5.chunk.js.map",
+    "static/js/3.69bda9d2.chunk.js": "/dnd-spellbook/static/js/3.69bda9d2.chunk.js",
+    "static/js/3.69bda9d2.chunk.js.map": "/dnd-spellbook/static/js/3.69bda9d2.chunk.js.map",
     "index.html": "/dnd-spellbook/index.html",
-    "precache-manifest.43f5e25f42b285b5ee6d96cb361ac99a.js": "/dnd-spellbook/precache-manifest.43f5e25f42b285b5ee6d96cb361ac99a.js",
+    "precache-manifest.01865d5f0e48281b05116ce251fcbb2f.js": "/dnd-spellbook/precache-manifest.01865d5f0e48281b05116ce251fcbb2f.js",
     "service-worker.js": "/dnd-spellbook/service-worker.js",
     "static/css/3.e17c4c79.chunk.css.map": "/dnd-spellbook/static/css/3.e17c4c79.chunk.css.map",
-    "static/css/main.f9d0b402.chunk.css.map": "/dnd-spellbook/static/css/main.f9d0b402.chunk.css.map"
+    "static/css/main.63663d9e.chunk.css.map": "/dnd-spellbook/static/css/main.63663d9e.chunk.css.map",
+    "static/media/SpellThumbnail.css": "/dnd-spellbook/static/media/new-year.22d3d203.svg"
   }
 }
