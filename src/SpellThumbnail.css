@@ -1,37 +1,57 @@
 .SpellThumbnail {
     display: inline-block;
+    width: 100%;
+    height: 100%;
+    border-radius: 4px;
+    background-size: 100% 100%;
+}
+
+.SpellThumbnailBackground {
+    display: inline-block;
     border-radius: 4px;
 }
 
-.SpellThumbnail-abjuration {
+.SpellThumbnailBackground-abjuration {
     background-image: radial-gradient(at 30% 30%, #82c4f2, #5e27df);
 }
 
-.SpellThumbnail-conjuration {
+.SpellThumbnailBackground-conjuration {
     background-image: radial-gradient(at 30% 30%, #bbb801, #a36a00);
 }
 
-.SpellThumbnail-divination {
+.SpellThumbnailBackground-divination {
     background-image: radial-gradient(at 30% 30%, #52a0d1, #213c4e);
 }
 
-.SpellThumbnail-enchantment {
+.SpellThumbnailBackground-enchantment {
     background-image: radial-gradient(at 30% 30%, #b64de7, #962a45);
 }
 
-.SpellThumbnail-evocation {
+.SpellThumbnailBackground-evocation {
     background-image: radial-gradient(at 30% 30%, rgb(255, 138, 0), rgb(218, 27, 96));
 }
 
-.SpellThumbnail-illusion {
+.SpellThumbnailBackground-illusion {
     background-image: radial-gradient(at 30% 30%, #c55ab3, #362b99);
 }
 
-.SpellThumbnail-necromancy {
+.SpellThumbnailBackground-necromancy {
     background-image: radial-gradient(at 30% 30%, #afac00, #2a6e09);
 }
 
-.SpellThumbnail-transmutation {
+.SpellThumbnailBackground-transmutation {
     background-image: radial-gradient(at 30% 30%, #dfbe53, #99270a);
 }
 
+/* Holiday cheer! */
+.Halloween .SpellThumbnail {
+    background-image: url(seasonal/halloween.svg);
+}
+
+.Christmas .SpellThumbnail {
+    background-image: url(seasonal/christmas.svg);
+}
+
+.NewYear .SpellThumbnail {
+    background-image: url(seasonal/new-year.svg);
+}

@@ -7,14 +7,16 @@ import './SpellThumbnail.css';
  */
 class SpellThumbnail extends PureComponent<{spell: Spell, showImage?: boolean, className?: string }> {
     render() {
-        let className = `SpellThumbnail SpellThumbnail-${this.props.spell.school}`;
+        let bgClassName = `SpellThumbnailBackground SpellThumbnailBackground-${this.props.spell.school}`;
         if (this.props.className) {
-            className += " " + this.props.className;
+            bgClassName += " " + this.props.className;
         }
         if (this.props.showImage === undefined || this.props.showImage) {
-            return <img className={className} src={getSpellThumbnailUrl(this.props.spell)} alt="" />;
+            return <div className={bgClassName}>
+                    <img className="SpellThumbnail" src={getSpellThumbnailUrl(this.props.spell)} alt="" />
+                </div>;
         } else {
-            return <div className={className} />;
+            return <div className={bgClassName} />;
         }
     }
 }

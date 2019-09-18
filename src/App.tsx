@@ -7,6 +7,7 @@ import FilterableSpellbook from './FilterableSpellbook';
 import { createMuiTheme, MuiThemeProvider } from '@material-ui/core/styles';
 import pink from '@material-ui/core/colors/pink';
 import SpellbookAppBar from './SpellbookAppBar';
+import { currentSeasons } from './model/season';
 
 const LinterResults = lazy(() => import('./LinterResults'));
 
@@ -38,9 +39,13 @@ class App extends Component<{}, { allSpells: Spell[] }> {
     });
   }
 
+  getMainClass(): string {
+    return ["App", ...currentSeasons].join(" ");
+  }
+
   render() {
     return <HashRouter>
-        <div className="App">
+        <div className={this.getMainClass()}>
           <MuiThemeProvider theme={theme}>
             <SpellbookAppBar spells={this.state.allSpells} />
             <div className="App-body">
